@@ -1,0 +1,51 @@
+.glitch {
+  position: relative;
+  display: inline-block;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: inherit;
+  user-select: none;
+}
+
+.glitch::after,
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: inherit;
+}
+
+.glitch:not(.enable-on-hover)::after {
+  left: 3px;
+  text-shadow: var(--after-shadow, -4px 0 #9b3dbe);
+  animation: heading-glitch var(--after-duration, 2.4s) infinite linear alternate-reverse;
+}
+
+.glitch:not(.enable-on-hover)::before {
+  left: -3px;
+  text-shadow: var(--before-shadow, 4px 0 #6d2d91);
+  animation: heading-glitch var(--before-duration, 1.8s) infinite linear alternate-reverse;
+}
+
+@keyframes heading-glitch {
+  0% {
+    clip-path: inset(20% 0 50% 0);
+  }
+  20% {
+    clip-path: inset(30% 0 30% 0);
+  }
+  40% {
+    clip-path: inset(10% 0 55% 0);
+  }
+  60% {
+    clip-path: inset(40% 0 18% 0);
+  }
+  80% {
+    clip-path: inset(15% 0 45% 0);
+  }
+  100% {
+    clip-path: inset(28% 0 35% 0);
+  }
+}

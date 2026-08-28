@@ -1,0 +1,12 @@
+.animated-gradient-text {
+  display: inline;
+  cursor: default;
+}
+
+.text-content {
+  display: inline;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

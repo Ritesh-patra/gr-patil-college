@@ -1,0 +1,172 @@
+.film {
+  padding: 72px 0 64px;
+  background: #0e160c;
+  color: #e8f0d4;
+}
+
+.film-head {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 28px;
+}
+
+.film-head .kicker {
+  color: #6d2d91;
+}
+
+.film-head h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 52px);
+  color: #fff;
+  line-height: 1.08;
+}
+
+.film-stage {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 20px;
+  min-height: 520px;
+}
+
+.film-photo {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 520px;
+  background: #111;
+}
+
+.film-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.film-photo img.is-on {
+  opacity: 1;
+}
+
+.film-shade {
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background: linear-gradient(transparent, rgba(8, 14, 6, 0.65));
+  pointer-events: none;
+}
+
+.film-bill {
+  position: absolute;
+  right: 24px;
+  bottom: 36px;
+  z-index: 2;
+  min-width: 180px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 253, 247, 0.95);
+  color: #3a0d14;
+}
+
+.film-bill span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c41e26;
+  font-weight: 700;
+}
+
+.film-bill s {
+  display: block;
+  color: #8a9078;
+  margin-bottom: 8px;
+}
+
+.film-bill strong {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 32px;
+}
+
+.film-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.film-progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #6d2d91;
+  animation: fill 4s linear forwards;
+}
+
+.film-rail {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.film-rail button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  text-align: left;
+  padding: 16px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.film-rail button span {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 20px;
+  color: #f0c419;
+}
+
+.film-rail button p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a9b88a;
+}
+
+.film-rail button.on {
+  background: #1c3314;
+  border-color: #6d2d91;
+}
+
+.film-rail button.on strong {
+  color: #fff;
+}
+
+@keyframes fill {
+  to {
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .film-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .film-photo {
+    min-height: 320px;
+  }
+}

@@ -1,0 +1,33 @@
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+  text-decoration: none;
+}
+
+.wa-float svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.wa-float:hover {
+  background: #1ebe57;
+}
+
+@media (max-width: 640px) {
+  .wa-float {
+    right: 14px;
+    bottom: 14px;
+    width: 54px;
+    height: 54px;
+  }
+}

@@ -1,0 +1,269 @@
+.dusk {
+  position: relative;
+  background:
+    radial-gradient(900px 420px at 80% 120%, rgba(255, 157, 77, 0.22), transparent 50%),
+    linear-gradient(180deg, #2a0a10 0%, #120508 100%);
+  color: #fde8ea;
+  overflow: hidden;
+}
+
+.dusk-cut {
+  display: block;
+  width: 100%;
+  height: 72px;
+}
+
+.dusk-inner {
+  position: relative;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 12px 0 36px;
+}
+
+.dusk-mark {
+  position: absolute;
+  right: -12px;
+  top: -20px;
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(120px, 22vw, 240px);
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+  text-align: start;
+}
+
+.dusk-kicker {
+  color: #f0c419 !important;
+  text-align: start;
+}
+
+.dusk-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 18px;
+}
+
+.dusk-brand .animated-logo {
+  width: 48px;
+  height: 62px;
+}
+
+.dusk-top h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.12;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dusk-motto {
+  margin: 8px 0 0 !important;
+  max-width: 18ch;
+  color: #f0c419;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: start !important;
+  line-height: 1.45;
+}
+
+.dusk-hops {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.dusk-hops button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 222, 78, 0.25);
+  background: transparent;
+  color: #f0c419;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.dusk-hops button:hover {
+  background: #c41e26;
+  color: #fff;
+  border-color: #c41e26;
+}
+
+.dusk-ticket {
+  display: grid;
+  grid-template-columns: 1.35fr 28px 0.95fr;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 22px;
+  background: #fef9e7;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.ticket-face,
+.ticket-codes {
+  background: transparent;
+  color: #213615;
+}
+
+.ticket-face {
+  padding: 28px 32px;
+  border-radius: 0;
+}
+
+.ticket-stub {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #213615;
+  color: #f0c419;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ticket-face address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.ticket-face .anticon {
+  color: #c41e26;
+  margin-right: 0;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.ticket-tear {
+  background:
+    radial-gradient(circle, #120508 5px, transparent 6px) center / 14px 22px;
+  border-left: 1px dashed #213615;
+  border-right: 1px dashed #213615;
+}
+
+.ticket-codes {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 28px 32px;
+  border-radius: 0;
+}
+
+.ticket-codes small {
+  display: block;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #c41e26;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ticket-codes strong {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+  color: #213615;
+}
+
+.dusk-reach {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 12px;
+}
+
+.reach-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 222, 78, 0.18);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.reach-chip:hover {
+  background: #c41e26;
+  transform: translateY(-3px);
+}
+
+.reach-chip .anticon {
+  font-size: 20px;
+  color: #f0c419;
+}
+
+.reach-chip small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.reach-chip span {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.reach-chip.mail span {
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.dusk-bar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 16px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: #a9b88a;
+}
+
+@media (max-width: 800px) {
+  .dusk-ticket,
+  .dusk-reach {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-face,
+  .ticket-codes {
+    border-radius: 0;
+  }
+
+  .ticket-tear {
+    height: 20px;
+    border: 0;
+    border-top: 1px dashed #213615;
+    border-bottom: 1px dashed #213615;
+    background:
+      radial-gradient(circle, #120508 5px, transparent 6px) center / 22px 12px;
+  }
+}

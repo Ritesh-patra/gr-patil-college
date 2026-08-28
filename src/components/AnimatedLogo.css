@@ -1,0 +1,32 @@
+.animated-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.animated-logo > * {
+  grid-area: 1 / 1;
+}
+
+.animated-logo img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(196, 30, 38, 0.28));
+  background: transparent;
+}
+
+.animated-logo lord-icon {
+  z-index: 0;
+  opacity: 0.38;
+  pointer-events: none;
+  transform: scale(1.2);
+}
+
+.animated-logo.is-light img {
+  filter: drop-shadow(0 6px 14px rgba(255, 222, 78, 0.28));
+}

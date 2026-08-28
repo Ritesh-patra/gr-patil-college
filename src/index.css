@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap');
+
+:root {
+  --green: #c41e26;
+  --green-bright: #6d2d91;
+  --yellow: #f0c419;
+  --orange: #9b3dbe;
+  --cream: #fff8e8;
+  --cream-deep: #f7edd4;
+  --white: #ffffff;
+  --ink: #3a0d14;
+  --muted: #6d4450;
+  font-family: 'Outfit', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+p,
+address,
+.lede,
+.intro,
+.aim-lede,
+.aim-card p,
+.pillar p,
+.impact-card p,
+.play-panel p,
+.showcase-detail p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+p.kicker,
+p.eyebrow,
+p.detail-tag,
+p.dusk-mark,
+p.dusk-motto,
+p.play-hint {
+  text-align: start;
+  hyphens: none;
+}
+
+::selection {
+  background: rgba(109, 45, 145, 0.4);
+  color: var(--ink);
+}
+
+.highlight-heading .animated-gradient-text,
+.highlight-heading .text-content {
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+.adv-split {
+  display: inline;
+  perspective: 800px;
+}
+
+.adv-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.adv-space {
+  display: inline;
+}
+
+.adv-char {
+  display: inline-block;
+  transform-origin: 50% 100%;
+  will-change: transform, filter, opacity;
+}
+
+.hero h1.highlight-heading {
+  max-width: 22ch;
+}
