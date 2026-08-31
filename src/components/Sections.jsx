@@ -3,6 +3,7 @@ import {
   HomeOutlined,
   ShopOutlined,
   BuildOutlined,
+  ReadOutlined,
 } from '@ant-design/icons'
 import Reveal from './Reveal'
 import HighlightHeading from './HighlightHeading'
@@ -25,6 +26,12 @@ const pillars = [
   },
   {
     n: '03',
+    icon: <ReadOutlined />,
+    title: 'Degree college',
+    text: 'Undergraduate programmes after junior college — arts, science and commerce, University of Mumbai.',
+  },
+  {
+    n: '04',
     icon: <BuildOutlined />,
     title: 'Campus culture',
     text: 'Sport, fitness, skill hours and the occasions that fill the calendar after class.',
@@ -36,6 +43,8 @@ const ticker = [
   'Std. 1 to 10',
   'Science',
   'Commerce',
+  'Junior college',
+  'Degree college',
   'Arts',
   'Laboratories',
   'Sports',
@@ -97,8 +106,8 @@ export default function Sections() {
             <p className="intro">
               G. R. Patil Vidyamandir & Jr. College of Science & Commerce,
               Dombivli (East). We take a child from the early years through
-              school and into junior college — without splitting the campus
-              into three different stories.
+              school and               into junior college and degree college — without splitting the
+              campus into three different stories.
             </p>
           </Reveal>
 

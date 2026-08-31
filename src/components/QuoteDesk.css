@@ -103,7 +103,7 @@
 
 .quote-kinds {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-bottom: 22px;
 }
@@ -240,8 +240,7 @@
 
 @media (max-width: 860px) {
   .quote-shell,
-  .quote-fields,
-  .quote-kinds {
+  .quote-fields {
     grid-template-columns: 1fr;
   }
 

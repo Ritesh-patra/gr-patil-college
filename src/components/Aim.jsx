@@ -58,7 +58,7 @@ export default function Aim() {
               <CheckCircleFilled /> Pre-primary to Std. 10
             </li>
             <li>
-              <CheckCircleFilled /> Jr. college: science & commerce
+              <CheckCircleFilled /> Jr. college and degree college
             </li>
             <li>
               <CheckCircleFilled /> Arts, labs, sport and stage

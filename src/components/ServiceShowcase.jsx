@@ -76,6 +76,15 @@ const services = [
     img: '/skilldev.jpeg',
     tone: '#3a0d14',
   },
+  {
+    id: 'degree',
+    no: '09',
+    title: 'Degree college',
+    tag: 'Undergraduate',
+    copy: 'Undergraduate programmes after junior college — arts, science and commerce under the University of Mumbai.',
+    img: '/campus.png',
+    tone: '#4a1028',
+  },
 ]
 
 function wrappedOffset(i, active, n) {

@@ -62,7 +62,8 @@ address,
 .pillar p,
 .impact-card p,
 .play-panel p,
-.showcase-detail p {
+.showcase-detail p,
+.trustee-copy p {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
@@ -73,7 +74,10 @@ p.eyebrow,
 p.detail-tag,
 p.dusk-mark,
 p.dusk-motto,
-p.play-hint {
+p.play-hint,
+p.trustee-lead,
+p.trustee-mark,
+.trustee-spine {
   text-align: start;
   hyphens: none;
 }

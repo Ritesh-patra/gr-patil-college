@@ -10,6 +10,7 @@ import './Navbar.css'
 const links = [
   { href: '#home', label: 'Home', hint: 'Start here', icon: LORD.home },
   { href: '#aim', label: 'Aim', hint: 'Why we teach', icon: LORD.globe },
+  { href: '#leadership', label: 'Trustee', hint: 'A message', icon: LORD.note },
   { href: '#about', label: 'About', hint: 'Who we are', icon: LORD.person },
   { href: '#services', label: 'Campus', hint: 'Life at school', icon: LORD.shop },
   { href: '#why', label: 'Why us', hint: 'What you gain', icon: LORD.plant },

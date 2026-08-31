@@ -12,6 +12,7 @@ const types = [
   { id: 'Pre-primary', note: 'Jr. KG / Sr. KG', icon: ic.home },
   { id: 'School', note: 'Std. 1 to 10', icon: ic.person },
   { id: 'Jr. college', note: 'Science / commerce', icon: ic.shop },
+  { id: 'Degree college', note: 'Undergraduate', icon: ic.globe },
 ]
 
 const empty = {

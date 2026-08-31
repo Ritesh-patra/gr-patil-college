@@ -2,6 +2,7 @@ import { ConfigProvider } from 'antd'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Aim from './components/Aim'
+import Trustee from './components/Trustee'
 import ServiceShowcase from './components/ServiceShowcase'
 import Sections from './components/Sections'
 import Footer from './components/Footer'
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <Aim />
+        <Trustee />
         <ServiceShowcase />
         <Sections />
       </main>

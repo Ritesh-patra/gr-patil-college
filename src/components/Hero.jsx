@@ -9,7 +9,7 @@ const stats = [
   { value: 'Jr. KG', label: 'Pre-primary start' },
   { value: '1 – 10', label: 'School years' },
   { value: '11 – 12', label: 'Junior college' },
-  { value: 'A · S · C', label: 'Arts, science, commerce' },
+  { value: 'Degree', label: 'Undergraduate' },
 ]
 
 export default function Hero() {
