@@ -1,16 +1,18 @@
+import { Link } from 'react-router-dom'
 import HighlightHeading from './HighlightHeading'
 import AnimatedLogo from './AnimatedLogo'
 import LordIcon from './LordIcon'
 import { LORD } from '../icons'
 import { school } from '../school'
-import { scrollToId } from './SmoothScroll'
 import './Footer.css'
 
 const hops = [
-  { href: '#home', label: 'Home' },
-  { href: '#aim', label: 'Aim' },
-  { href: '#services', label: 'Campus' },
-  { href: '#contact', label: 'Admission' },
+  { to: '/', label: 'Home' },
+  { to: '/pre-primary', label: 'Pre-primary' },
+  { to: '/school', label: 'School' },
+  { to: '/jr-college', label: 'Jr college' },
+  { to: '/gallery', label: 'Gallery' },
+  { to: '/information-desk', label: 'Info desk' },
 ]
 
 export default function Footer() {
@@ -45,9 +47,9 @@ export default function Footer() {
           </div>
           <div className="dusk-hops">
             {hops.map((h) => (
-              <button key={h.href} type="button" onClick={() => scrollToId(h.href)}>
+              <Link key={h.to} to={h.to}>
                 {h.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

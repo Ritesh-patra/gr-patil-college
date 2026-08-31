@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import HighlightHeading from './HighlightHeading'
+import { asset } from '../icons'
 import './ServiceShowcase.css'
 
 const services = [
@@ -10,7 +11,7 @@ const services = [
     title: 'Pre-primary',
     tag: 'Jr. KG · Sr. KG',
     copy: 'First years on campus — play, language and the habits that make a school day feel like home.',
-    img: '/assembly.jpeg',
+    img: asset('assembly.jpeg'),
     tone: '#5a1020',
   },
   {
@@ -19,7 +20,7 @@ const services = [
     title: 'Std. 1 to 10',
     tag: 'Vidyamandir',
     copy: 'A full school ladder through the board years, with the same teachers and the same ground.',
-    img: '/secondary.jpeg',
+    img: asset('secondary.jpeg'),
     tone: '#3a0d14',
   },
   {
@@ -28,7 +29,7 @@ const services = [
     title: 'Science',
     tag: 'Jr. college',
     copy: 'Labs that are used, not displayed. Practicals, pipettes and the quiet of real work.',
-    img: '/lab1.jpeg',
+    img: asset('lab1.jpeg'),
     tone: '#2a0818',
   },
   {
@@ -37,7 +38,7 @@ const services = [
     title: 'Commerce',
     tag: 'Jr. college',
     copy: 'Accounts, business and the numbers that follow a student into the degree years.',
-    img: '/everyday.jpeg',
+    img: asset('everyday.jpeg'),
     tone: '#4a1024',
   },
   {
@@ -46,7 +47,7 @@ const services = [
     title: 'Arts & culture',
     tag: 'Stage',
     copy: 'Occasions, dance and the calendar that makes a campus more than a timetable.',
-    img: '/cultural.jpg',
+    img: asset('cultural.jpg'),
     tone: '#5c1830',
   },
   {
@@ -55,7 +56,7 @@ const services = [
     title: 'Sports',
     tag: 'Ground',
     copy: 'Matches, drills and the hours after class when the yard is still loud.',
-    img: '/sports.jpeg',
+    img: asset('sports.jpeg'),
     tone: '#1f3a18',
   },
   {
@@ -64,7 +65,7 @@ const services = [
     title: 'Fitness',
     tag: 'Body',
     copy: 'Strength and stamina taught as part of the week, not a poster on the wall.',
-    img: '/fitness.jpg',
+    img: asset('fitness.jpg'),
     tone: '#3a2810',
   },
   {
@@ -73,7 +74,7 @@ const services = [
     title: 'Skill hours',
     tag: 'Hands-on',
     copy: 'Workshops and skill days — making, building, and learning that does not live only in a notebook.',
-    img: '/skilldev.jpeg',
+    img: asset('skilldev.jpeg'),
     tone: '#3a0d14',
   },
   {
@@ -82,7 +83,7 @@ const services = [
     title: 'Degree college',
     tag: 'Undergraduate',
     copy: 'Undergraduate programmes after junior college — arts, science and commerce under the University of Mumbai.',
-    img: '/campus.png',
+    img: asset('campus.png'),
     tone: '#4a1028',
   },
 ]

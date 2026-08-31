@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Reveal from './Reveal'
 import HighlightHeading from './HighlightHeading'
+import { asset } from '../icons'
 import './SolarStory.css'
 
 const beats = [
@@ -8,31 +9,31 @@ const beats = [
     no: '01',
     title: 'The day begins',
     copy: 'Assembly, uniform, the same ground. A campus that already knows the child.',
-    img: '/assembly.jpeg',
+    img: asset('assembly.jpeg'),
   },
   {
     no: '02',
     title: 'Class and lab',
     copy: 'Notebooks in the morning. Pipettes and benches when the science hour comes.',
-    img: '/lab2.jpeg',
+    img: asset('lab2.jpeg'),
   },
   {
     no: '03',
     title: 'The yard',
     copy: 'Sport and fitness after the bell — not as a once-a-year photograph.',
-    img: '/sports.jpeg',
+    img: asset('sports.jpeg'),
   },
   {
     no: '04',
     title: 'Stage and occasion',
     copy: 'Culture days, celebrations, the hall full. A school that can be heard.',
-    img: '/celebrate.jpg',
+    img: asset('celebrate.jpg'),
   },
   {
     no: '05',
     title: 'The house',
     copy: 'Teachers, team, the people who stay. That is the whole point.',
-    img: '/team.jpg',
+    img: asset('team.jpg'),
   },
 ]
 

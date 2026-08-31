@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import { Button } from 'antd'
 import { PlayCircleOutlined, EnvironmentOutlined } from '@ant-design/icons'
 import HighlightHeading from './HighlightHeading'
 import HeroSun from './HeroSun'
 import { scrollToId } from './SmoothScroll'
+import { asset } from '../icons'
 import './Hero.css'
 
 const stats = [
@@ -13,6 +15,7 @@ const stats = [
 ]
 
 export default function Hero() {
+  const navigate = useNavigate()
   return (
     <section className="hero" id="home">
       <div className="hero-bg" aria-hidden="true">
@@ -36,7 +39,7 @@ export default function Hero() {
             culture.
           </p>
           <div className="hero-actions">
-            <Button type="primary" size="large" onClick={() => scrollToId('#services')}>
+            <Button type="primary" size="large" onClick={() => navigate('/gallery')}>
               See campus life
             </Button>
             <Button
@@ -55,7 +58,7 @@ export default function Hero() {
           <HeroSun />
           <figure className="hero-photo">
             <img
-              src="/campus.png"
+              src={asset('campus.png')}
               alt="G. R. Patil campus building"
             />
             <span className="hero-shine" aria-hidden="true" />

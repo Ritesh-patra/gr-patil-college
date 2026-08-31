@@ -3,6 +3,7 @@ import { CheckCircleFilled } from '@ant-design/icons'
 import HighlightHeading from './HighlightHeading'
 import Reveal from './Reveal'
 import { scrollToId } from './SmoothScroll'
+import { asset } from '../icons'
 import './Aim.css'
 
 function TiltCard({ children, className = '' }) {
@@ -74,7 +75,7 @@ export default function Aim() {
           <Reveal delay={80} className="aim-shot farm">
             <TiltCard>
               <figure>
-                <img src="/assembly.jpeg" alt="Morning assembly at G. R. Patil" />
+                <img src={asset('assembly.jpeg')} alt="Morning assembly at G. R. Patil" />
                 <figcaption>Assembly & belonging</figcaption>
               </figure>
             </TiltCard>
@@ -82,7 +83,7 @@ export default function Aim() {
           <Reveal delay={160} className="aim-shot roof">
             <TiltCard>
               <figure>
-                <img src="/lab1.jpeg" alt="Science laboratory practical" />
+                <img src={asset('lab1.jpeg')} alt="Science laboratory practical" />
                 <figcaption>Science practicals</figcaption>
               </figure>
             </TiltCard>
@@ -90,7 +91,7 @@ export default function Aim() {
           <Reveal delay={240} className="aim-shot crew">
             <TiltCard>
               <figure>
-                <img src="/sports.jpeg" alt="Students at sport on campus" />
+                <img src={asset('sports.jpeg')} alt="Students at sport on campus" />
                 <figcaption>Sport on campus</figcaption>
               </figure>
             </TiltCard>
@@ -101,7 +102,7 @@ export default function Aim() {
       <div className="aim-wrap aim-trio">
         <Reveal>
           <article className="trio-photo">
-            <img src="/teachers.jpg" alt="" />
+            <img src={asset('teachers.jpg')} alt="" />
             <div>
               <small>01 · Teaching</small>
               <HighlightHeading as="h3" variant="split">

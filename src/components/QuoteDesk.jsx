@@ -4,6 +4,7 @@ import Reveal from './Reveal'
 import LordIcon from './LordIcon'
 import { LORD } from '../icons'
 import { school, ink, light, onBtn } from '../school'
+import { asset } from '../icons'
 import './QuoteDesk.css'
 
 const ic = LORD
@@ -51,7 +52,12 @@ export default function QuoteDesk() {
   return (
     <section className="quote-desk" id="contact">
       <div className="quote-shell">
-        <aside className="quote-side">
+        <aside
+          className="quote-side"
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(42, 10, 16, 0.45), rgba(18, 5, 8, 0.88)), url(${asset('event.jpeg')})`,
+          }}
+        >
           <Reveal>
             <p className="kicker">Admission</p>
             <HighlightHeading

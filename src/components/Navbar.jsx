@@ -1,71 +1,61 @@
 import { useEffect, useState } from 'react'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Button, Drawer } from 'antd'
 import BrandLockup from './BrandLockup'
 import AnimatedLogo from './AnimatedLogo'
 import LordIcon from './LordIcon'
 import { LORD } from '../icons'
-import { scrollToId } from './SmoothScroll'
 import './Navbar.css'
 
 const links = [
-  { href: '#home', label: 'Home', hint: 'Start here', icon: LORD.home },
-  { href: '#aim', label: 'Aim', hint: 'Why we teach', icon: LORD.globe },
-  { href: '#leadership', label: 'Trustee', hint: 'A message', icon: LORD.note },
-  { href: '#about', label: 'About', hint: 'Who we are', icon: LORD.person },
-  { href: '#services', label: 'Campus', hint: 'Life at school', icon: LORD.shop },
-  { href: '#why', label: 'Why us', hint: 'What you gain', icon: LORD.plant },
-  { href: '#contact', label: 'Admission', hint: 'Talk to us', icon: LORD.mail },
+  { to: '/', label: 'Home', hint: 'Start here', icon: LORD.home, end: true },
+  { to: '/pre-primary', label: 'Pre-primary', hint: 'Jr. KG & Sr. KG', icon: LORD.plant },
+  { to: '/school', label: 'School', hint: 'Std. 1 to 10', icon: LORD.globe },
+  { to: '/jr-college', label: 'Jr college & degree', hint: 'XI–XII and UG', icon: LORD.note },
+  { to: '/gallery', label: 'Gallery', hint: 'Campus photos', icon: LORD.shop },
+  { to: '/information-desk', label: 'Info desk', hint: 'Ask us anything', icon: LORD.mail },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState('#home')
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 24)
-      const ids = links.map((l) => l.href.slice(1))
-      for (const id of [...ids].reverse()) {
-        const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActive(`#${id}`)
-          break
-        }
-      }
-    }
+    const onScroll = () => setScrolled(window.scrollY > 24)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const go = (e, href) => {
-    e.preventDefault()
-    setOpen(false)
-    setActive(href)
-    scrollToId(href)
+  const close = () => setOpen(false)
+
+  const goDesk = () => {
+    close()
+    navigate('/information-desk')
   }
 
   return (
     <header className={`nav-wrap ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="nav-shell">
-        <a href="#home" className="brand" onClick={(e) => go(e, '#home')}>
+        <Link to="/" className="brand" onClick={close}>
           <span className="brand-mark">
             <AnimatedLogo size={44} height={52} />
           </span>
           <BrandLockup />
-        </a>
+        </Link>
 
         <nav className="nav-pills" aria-label="Primary">
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={active === link.href ? 'is-active' : ''}
-              onClick={(e) => go(e, link.href)}
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.end}
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -82,7 +72,7 @@ export default function Navbar() {
                 size={22}
               />
             }
-            onClick={(e) => go(e, '#contact')}
+            onClick={goDesk}
           >
             Admissions
           </Button>
@@ -104,7 +94,7 @@ export default function Navbar() {
       <Drawer
         placement="right"
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={close}
         closable={false}
         width="min(100vw, 420px)"
         rootClassName="nav-drawer"
@@ -127,7 +117,7 @@ export default function Navbar() {
               type="button"
               className="sheet-close"
               aria-label="Close menu"
-              onClick={() => setOpen(false)}
+              onClick={close}
             >
               <span aria-hidden="true" />
             </button>
@@ -135,64 +125,65 @@ export default function Navbar() {
 
           <div className="sheet-scroll">
             <nav className="sheet-nav" aria-label="Mobile">
-            {links.map((link, i) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`sheet-link ${active === link.href ? 'is-active' : ''}`}
-                style={{ '--i': i }}
-                onClick={(e) => go(e, link.href)}
-              >
-                <span className="sheet-mark">
+              {links.map((link, i) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.end}
+                  className={({ isActive }) => `sheet-link ${isActive ? 'is-active' : ''}`}
+                  style={{ '--i': i }}
+                  onClick={close}
+                >
+                  <span className="sheet-mark">
+                    <LordIcon
+                      src={link.icon}
+                      trigger="loop-on-hover"
+                      colors={
+                        link.to === '/pre-primary'
+                          ? 'primary:#f0c419,secondary:#f0c419'
+                          : pathname === link.to || (link.end && pathname === '/')
+                            ? 'primary:#ffffff,secondary:#f0c419'
+                            : 'primary:#f0c419,secondary:#6d2d91'
+                      }
+                      target=".sheet-link"
+                      size={32}
+                    />
+                  </span>
+                  <span>
+                    <strong>{link.label}</strong>
+                    <small>{link.hint}</small>
+                  </span>
                   <LordIcon
-                    src={link.icon}
-                    trigger="loop-on-hover"
-                    colors={
-                      link.href === '#aim'
-                        ? 'primary:#f0c419,secondary:#f0c419'
-                        : active === link.href
-                          ? 'primary:#ffffff,secondary:#f0c419'
-                          : 'primary:#f0c419,secondary:#6d2d91'
-                    }
+                    src={LORD.send}
+                    trigger="hover"
+                    colors="primary:#6d2d91,secondary:#f0c419"
                     target=".sheet-link"
-                    size={32}
+                    size={18}
                   />
-                </span>
-                <span>
-                  <strong>{link.label}</strong>
-                  <small>{link.hint}</small>
-                </span>
+                </NavLink>
+              ))}
+            </nav>
+
+            <div className="sheet-foot">
+              <NavLink className="sheet-cta" to="/information-desk" onClick={close}>
+                Admissions
                 <LordIcon
                   src={LORD.send}
                   trigger="hover"
-                  colors="primary:#6d2d91,secondary:#f0c419"
-                  target=".sheet-link"
-                  size={18}
+                  colors="primary:#3a0d14,secondary:#c41e26"
+                  target=".sheet-cta"
+                  size={22}
                 />
+              </NavLink>
+              <a href="tel:+919136800532">
+                <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#6d2d91" target="a" size={22} />
+                91368 00532
               </a>
-            ))}
-          </nav>
-
-          <div className="sheet-foot">
-            <a className="sheet-cta" href="#contact" onClick={(e) => go(e, '#contact')}>
-              Admissions
-              <LordIcon
-                src={LORD.send}
-                trigger="hover"
-                colors="primary:#3a0d14,secondary:#c41e26"
-                target=".sheet-cta"
-                size={22}
-              />
-            </a>
-            <a href="tel:+919136800532">
-              <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#6d2d91" target="a" size={22} />
-              91368 00532
-            </a>
-            <a href="tel:+919136545145">
-              <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#6d2d91" target="a" size={22} />
-              91365 45145
-            </a>
-          </div>
+              <a href="tel:+919136545145">
+                <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#6d2d91" target="a" size={22} />
+                91365 45145
+              </a>
+            </div>
           </div>
         </div>
       </Drawer>

@@ -1,15 +1,20 @@
-export const LORD = {
-  home: 'https://cdn.lordicon.com/cnpvyndp.json',
-  shop: 'https://cdn.lordicon.com/fhtaantg.json',
-  plant: 'https://cdn.lordicon.com/gqdnbnwt.json',
-  person: 'https://cdn.lordicon.com/msoeawqm.json',
-  phone: 'https://cdn.lordicon.com/srsgifqc.json',
-  mail: 'https://cdn.lordicon.com/rhvddzym.json',
-  pin: 'https://cdn.lordicon.com/surcxhka.json',
-  note: 'https://cdn.lordicon.com/nocovwne.json',
-  send: 'https://cdn.lordicon.com/zmkotitn.json',
-  party: 'https://cdn.lordicon.com/lupuorrc.json',
-  globe: 'https://cdn.lordicon.com/gqzfzudq.json',
+export function asset(path) {
+  const file = String(path).replace(/^\//, '')
+  return `${import.meta.env.BASE_URL}${file}`
 }
 
-export const LOGO_PNG = `${import.meta.env.BASE_URL}logo.png`
+export const LOGO_PNG = asset('logo.png')
+
+export const LORD = {
+  home: asset('lord/home.json'),
+  shop: asset('lord/shop.json'),
+  plant: asset('lord/plant.json'),
+  person: asset('lord/person.json'),
+  phone: asset('lord/phone.json'),
+  mail: asset('lord/mail.json'),
+  pin: asset('lord/pin.json'),
+  note: asset('lord/note.json'),
+  send: asset('lord/send.json'),
+  party: asset('lord/party.json'),
+  globe: asset('lord/globe.json'),
+}

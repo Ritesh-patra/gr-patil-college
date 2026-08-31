@@ -18,9 +18,9 @@
 
 .quote-side {
   padding: 40px 32px;
-  background:
-    linear-gradient(180deg, rgba(42, 10, 16, 0.45), rgba(18, 5, 8, 0.88)),
-    url('/event.jpeg') center / cover;
+  background-color: #2a0a10;
+  background-position: center;
+  background-size: cover;
   color: #fdeeee;
   display: flex;
   flex-direction: column;

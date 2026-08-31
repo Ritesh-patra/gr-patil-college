@@ -81,7 +81,7 @@
   margin-bottom: 32px;
 }
 
-.dusk-hops button {
+.dusk-hops a {
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255, 222, 78, 0.25);
@@ -92,10 +92,10 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-.dusk-hops button:hover {
+.dusk-hops a:hover {
   background: #c41e26;
   color: #fff;
   border-color: #c41e26;

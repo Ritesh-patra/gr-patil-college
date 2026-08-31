@@ -1,7 +1,7 @@
 import HighlightHeading from './HighlightHeading'
 import Reveal from './Reveal'
 import LordIcon from './LordIcon'
-import { LORD } from '../icons'
+import { LORD, asset } from '../icons'
 import { school } from '../school'
 import './Trustee.css'
 
@@ -16,7 +16,7 @@ export default function Trustee() {
         <Reveal className="trustee-portrait">
           <span className="trustee-spine">Trustee</span>
           <figure>
-            <img src="/trustee.png" alt="Trustee of G. R. Patil College" />
+            <img src={asset('trustee.png')} alt="Trustee of G. R. Patil College" />
             <span className="trustee-cut" aria-hidden="true" />
           </figure>
           <div className="trustee-seal">
