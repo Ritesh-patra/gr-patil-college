@@ -3,15 +3,20 @@ import { useEffect } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppFloat from './WhatsAppFloat'
-import SmoothScroll from './SmoothScroll'
+import SmoothScroll, { scrollToId } from './SmoothScroll'
 
 function ScrollTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    if (hash) {
+      const id = hash.startsWith('#') ? hash : `#${hash}`
+      const t = window.setTimeout(() => scrollToId(id), 80)
+      return () => window.clearTimeout(t)
+    }
     const lenis = window.__lenis
     if (lenis) lenis.scrollTo(0, { immediate: true })
     else window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 

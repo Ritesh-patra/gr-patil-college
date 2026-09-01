@@ -8,6 +8,9 @@ import {
   CollegePage,
   GalleryPage,
   DeskPage,
+  NoticesPage,
+  GuidelinesPage,
+  CircularPage,
 } from './pages/InnerPages'
 import { appTheme } from './theme'
 
@@ -22,6 +25,9 @@ export default function App() {
           <Route path="/jr-college" element={<CollegePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/information-desk" element={<DeskPage />} />
+          <Route path="/notices" element={<NoticesPage />} />
+          <Route path="/guidelines" element={<GuidelinesPage />} />
+          <Route path="/circular" element={<CircularPage />} />
         </Route>
       </Routes>
     </ConfigProvider>

@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom'
 import { Button } from 'antd'
 import { PlayCircleOutlined, EnvironmentOutlined } from '@ant-design/icons'
 import HighlightHeading from './HighlightHeading'
 import HeroSun from './HeroSun'
 import { scrollToId } from './SmoothScroll'
 import { asset } from '../icons'
+import { school } from '../school'
 import './Hero.css'
 
 const stats = [
@@ -15,7 +15,6 @@ const stats = [
 ]
 
 export default function Hero() {
-  const navigate = useNavigate()
   return (
     <section className="hero" id="home">
       <div className="hero-bg" aria-hidden="true">
@@ -27,19 +26,18 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="eyebrow">
-            <EnvironmentOutlined /> G. R. Patil · Dombivli (East)
+            <EnvironmentOutlined /> G. R. Patil · {school.place}
           </p>
           <HighlightHeading as="h1">
             A campus for every stage — KG to junior college.
           </HighlightHeading>
           <p className="lede">
-            G. R. Patil Vidyamandir & Jr. College of Science & Commerce.
-            Pre-primary, school and junior college on one campus — arts,
-            science and commerce, with labs, sport and a full calendar of
-            culture.
+            {school.full}. Pre-primary, school and junior college on one
+            campus — science and commerce, with labs, sport and a full
+            calendar of culture.
           </p>
           <div className="hero-actions">
-            <Button type="primary" size="large" onClick={() => navigate('/gallery')}>
+            <Button type="primary" size="large" onClick={() => scrollToId('#services')}>
               See campus life
             </Button>
             <Button
@@ -63,7 +61,7 @@ export default function Hero() {
             />
             <span className="hero-shine" aria-hidden="true" />
           </figure>
-          <span className="hero-chip">Arts · Science · Commerce</span>
+          <span className="hero-chip">Science · Commerce</span>
         </div>
 
         <dl className="hero-stats">

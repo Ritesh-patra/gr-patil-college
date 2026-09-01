@@ -23,7 +23,7 @@ function Banner({ kicker, title, lead, image, alt }) {
 export function PrePrimaryPage() {
   const points = [
     { title: 'Care first', text: 'Settling-in, rest time and a teacher who knows each child’s name.' },
-    { title: 'Play & art', text: 'Stories, colour, clay and outdoor play — the real work of the early years.' },
+    { title: 'Play & colour', text: 'Stories, colour, clay and outdoor play — the real work of the early years.' },
     { title: 'First language', text: 'Songs and conversation that open language and the joy of speaking up.' },
     { title: 'Parents beside us', text: 'Daily notes and an open door, so home and school tell the same story.' },
   ]
@@ -60,7 +60,7 @@ export function SchoolPage() {
   const points = [
     { title: 'Academics', text: 'A clear syllabus, regular assessment and teachers who explain until it makes sense.' },
     { title: 'Sport & movement', text: 'Grounds and games so energy has a place, and teamwork is practised.' },
-    { title: 'Arts & clubs', text: 'Music, drama and student clubs — a child is more than a rank list.' },
+    { title: 'Clubs', text: 'Music, drama and student clubs — a child is more than a rank list.' },
     { title: 'Values', text: 'Respect, punctuality and kindness are part of the timetable, not a poster.' },
   ]
   return (
@@ -98,7 +98,7 @@ export function CollegePage() {
       <Banner
         kicker="03 · Jr college & degree"
         title="After school, a path with a name — then a degree on the same campus."
-        lead="XI and XII in science, commerce and arts. Undergraduate years follow here, affiliated to the University of Mumbai."
+        lead="XI and XII in science and commerce. Undergraduate years follow here, affiliated to the University of Mumbai."
         image="lab1.jpeg"
         alt="Science laboratory"
       />
@@ -107,11 +107,10 @@ export function CollegePage() {
           <p className="kicker">Junior college</p>
           <HighlightHeading as="h2">Streams after Std. 10</HighlightHeading>
         </Reveal>
-        <div className="inner-grid three">
+        <div className="inner-grid">
           {[
             { title: 'Science', text: 'Physics, chemistry, mathematics and biology for technical and medical paths.' },
             { title: 'Commerce', text: 'Accounts, business and economics — a foundation for finance and further study.' },
-            { title: 'Arts', text: 'Literature, social sciences and languages for students who want to read widely.' },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 60}>
               <article className="inner-gold">
@@ -208,11 +207,6 @@ export function DeskPage() {
           <div>
             <LordIcon src={LORD.phone} trigger="loop" colors="primary:#c41e26,secondary:#f0c419" size={32} />
             <strong>Phone</strong>
-            {school.officePhones.map((n) => (
-              <a key={n} href={`tel:+91${n}`}>
-                +91 {n}
-              </a>
-            ))}
             {school.displayPhones.map((n, i) => (
               <a key={n} href={`tel:${school.tel[i]}`}>
                 {n}
@@ -245,4 +239,87 @@ export function DeskPage() {
       <QuoteDesk />
     </main>
   )
+}
+
+const deskDocs = {
+  notices: {
+    kicker: 'Information desk',
+    title: 'Notices',
+    lead: 'Dates, holidays and anything the office needs families to know this term.',
+    image: 'teachers.jpg',
+    items: [
+      { title: 'Admissions window', text: 'Ask the desk for the current dates for pre-primary, school, junior college and degree.' },
+      { title: 'Term calendar', text: 'Working days, assessments and campus occasions as they are confirmed.' },
+      { title: 'Holiday list', text: 'The list for this year is issued from the office — collect it or ask us to send it.' },
+      { title: 'Urgent notes', text: 'Weather, transport or a changed timetable will be posted here first.' },
+    ],
+  },
+  guidelines: {
+    kicker: 'Information desk',
+    title: 'Guidelines',
+    lead: 'How the campus runs — uniform, attendance, labs and what we ask of families.',
+    image: 'secondary.jpeg',
+    items: [
+      { title: 'Attendance', text: 'A regular day, on time. Leave is informed to the class teacher, not assumed.' },
+      { title: 'Uniform & conduct', text: 'The same ground, the same standard — dress and behaviour are part of the timetable.' },
+      { title: 'Labs & safety', text: 'Science practicals follow the lab rules. Students stay with the teacher on duty.' },
+      { title: 'Parents', text: 'Walk in during office hours, or write. We answer from this campus, not a call centre.' },
+    ],
+  },
+  circular: {
+    kicker: 'Information desk',
+    title: 'Circular',
+    lead: 'Office circulars for fees, exams and any change the school puts in writing.',
+    image: 'event.jpeg',
+    items: [
+      { title: 'Fee circulars', text: 'When a fee notice is issued, it sits here so families can read it plainly.' },
+      { title: 'Exam circulars', text: 'Internal tests, board dates and practicals as the office confirms them.' },
+      { title: 'Campus circulars', text: 'Events, transport and any change to the day that needs a signature from the desk.' },
+      { title: 'Ask for a copy', text: 'If a circular is not yet online, call or walk in. We will print what is current.' },
+    ],
+  },
+}
+
+function DeskDocsPage({ kind }) {
+  const doc = deskDocs[kind]
+  return (
+    <main className="inner">
+      <Banner
+        kicker={doc.kicker}
+        title={doc.title}
+        lead={doc.lead}
+        image={doc.image}
+        alt={doc.title}
+      />
+      <div className="inner-body">
+        <div className="inner-grid">
+          {doc.items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 60}>
+              <article>
+                <small>0{i + 1}</small>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+        <p className="inner-note">{school.address}</p>
+        <Link className="inner-go" to="/information-desk">
+          Talk to the information desk
+        </Link>
+      </div>
+    </main>
+  )
+}
+
+export function NoticesPage() {
+  return <DeskDocsPage kind="notices" />
+}
+
+export function GuidelinesPage() {
+  return <DeskDocsPage kind="guidelines" />
+}
+
+export function CircularPage() {
+  return <DeskDocsPage kind="circular" />
 }

@@ -1,21 +1,28 @@
-import { Link } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import HighlightHeading from './HighlightHeading'
 import AnimatedLogo from './AnimatedLogo'
 import LordIcon from './LordIcon'
 import { LORD } from '../icons'
 import { school } from '../school'
+import { scrollToId } from './SmoothScroll'
 import './Footer.css'
 
 const hops = [
-  { to: '/', label: 'Home' },
-  { to: '/pre-primary', label: 'Pre-primary' },
-  { to: '/school', label: 'School' },
-  { to: '/jr-college', label: 'Jr college' },
-  { to: '/gallery', label: 'Gallery' },
-  { to: '/information-desk', label: 'Info desk' },
+  { href: '#home', label: 'Home' },
+  { href: '#aim', label: 'Aim' },
+  { href: '#services', label: 'Campus' },
+  { href: '#contact', label: 'Admission' },
 ]
 
 export default function Footer() {
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  const go = (href) => {
+    if (pathname !== '/') navigate({ pathname: '/', hash: href.slice(1) })
+    else scrollToId(href)
+  }
+
   return (
     <footer className="dusk">
       <svg className="dusk-cut" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
@@ -39,24 +46,24 @@ export default function Footer() {
                 {school.name}
               </HighlightHeading>
               <p className="dusk-motto">
-                Arts, science
+                Science
                 <br />
-                & commerce
+                &amp; commerce
               </p>
             </div>
           </div>
           <div className="dusk-hops">
             {hops.map((h) => (
-              <Link key={h.to} to={h.to}>
+              <button key={h.href} type="button" onClick={() => go(h.href)}>
                 {h.label}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
 
         <div className="dusk-ticket">
           <div className="ticket-face">
-            <span className="ticket-stub">Dombivli</span>
+            <span className="ticket-stub">Ambernath</span>
             <address>
               <LordIcon
                 src={LORD.pin}
@@ -64,18 +71,14 @@ export default function Footer() {
                 colors="primary:#3a0d14,secondary:#c41e26"
                 size={22}
               />
-              <span>
-                {school.full}
-                <br />
-                {school.address}
-              </span>
+              <span>{school.address}</span>
             </address>
           </div>
           <div className="ticket-tear" aria-hidden="true" />
           <div className="ticket-codes">
             <div>
               <small>Streams</small>
-              <strong>Arts · Sci · Com</strong>
+              <strong>Sci · Com</strong>
             </div>
             <div>
               <small>Years</small>
@@ -85,38 +88,27 @@ export default function Footer() {
         </div>
 
         <div className="dusk-reach">
-          <a className="reach-chip" href={`tel:${school.tel[0]}`}>
-            <LordIcon
-              src={LORD.phone}
-              trigger="loop-on-hover"
-              colors="primary:#f0c419,secondary:#6d2d91"
-              target=".reach-chip"
-              size={26}
-            />
-            <span>
-              <small>Call</small>
-              {school.displayPhones[0]}
-            </span>
-          </a>
-          <a className="reach-chip" href={`tel:${school.tel[1]}`}>
-            <LordIcon
-              src={LORD.phone}
-              trigger="loop-on-hover"
-              colors="primary:#f0c419,secondary:#6d2d91"
-              target=".reach-chip"
-              size={26}
-            />
-            <span>
-              <small>Call</small>
-              {school.displayPhones[1]}
-            </span>
-          </a>
+          {school.displayPhones.map((n, i) => (
+            <a key={n} className="reach-chip" href={`tel:${school.tel[i]}`}>
+              <LordIcon
+                src={LORD.phone}
+                trigger="loop-on-hover"
+                colors="primary:#f0c419,secondary:#6d2d91"
+                target=".reach-chip"
+                size={26}
+              />
+              <span>
+                <small>Call</small>
+                {n}
+              </span>
+            </a>
+          ))}
         </div>
       </div>
 
       <div className="dusk-bar">
         <span>© {new Date().getFullYear()} {school.name}</span>
-        <span>Vidyamandir & Jr. College · {school.place}</span>
+        <span>School &amp; Jr. College · {school.place}</span>
       </div>
     </footer>
   )

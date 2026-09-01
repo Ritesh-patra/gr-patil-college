@@ -111,6 +111,11 @@
   color: #5a2a18;
 }
 
+.inner-note {
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
 .inner-go {
   display: inline-flex;
   margin-top: 8px;

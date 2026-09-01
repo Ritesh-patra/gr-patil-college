@@ -9,6 +9,7 @@ import Reveal from './Reveal'
 import HighlightHeading from './HighlightHeading'
 import SolarStory from './SolarStory'
 import QuoteDesk from './QuoteDesk'
+import { school } from '../school'
 import './Sections.css'
 
 const pillars = [
@@ -28,7 +29,7 @@ const pillars = [
     n: '03',
     icon: <ReadOutlined />,
     title: 'Degree college',
-    text: 'Undergraduate programmes after junior college — arts, science and commerce, University of Mumbai.',
+    text: 'Undergraduate programmes after junior college — science and commerce, University of Mumbai.',
   },
   {
     n: '04',
@@ -45,7 +46,6 @@ const ticker = [
   'Commerce',
   'Junior college',
   'Degree college',
-  'Arts',
   'Laboratories',
   'Sports',
   'Admissions',
@@ -101,12 +101,11 @@ export default function Sections() {
           <Reveal>
             <p className="kicker">About us</p>
             <HighlightHeading className="display">
-              G. R. Patil College. Arts, science and commerce.
+              G. R. Patil College. Science and commerce.
             </HighlightHeading>
             <p className="intro">
-              G. R. Patil Vidyamandir & Jr. College of Science & Commerce,
-              Dombivli (East). We take a child from the early years through
-              school and               into junior college and degree college — without splitting the
+              {school.full}, {school.place}. We take a child from the early years through
+              school and into junior college and degree college — without splitting the
               campus into three different stories.
             </p>
           </Reveal>
@@ -154,10 +153,10 @@ export default function Sections() {
               <article className="impact-card gold">
                 <small>Streams</small>
                 <strong>
-                  Three
+                  Two
                   <em> desks</em>
                 </strong>
-                <p>Arts, science and commerce under one red-and-gold mark.</p>
+                <p>Science and commerce under one red-and-gold mark.</p>
               </article>
             </Reveal>
             <Reveal delay={200}>

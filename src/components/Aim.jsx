@@ -51,7 +51,7 @@ export default function Aim() {
           </HighlightHeading>
           <p className="aim-lede">
             Our aim is a complete ladder — from junior KG to junior college —
-            where science labs, commerce desks and the arts sit beside sport
+            where science labs and commerce desks sit beside sport
             and culture, not after them.
           </p>
           <ul className="aim-checks">
@@ -62,7 +62,7 @@ export default function Aim() {
               <CheckCircleFilled /> Jr. college and degree college
             </li>
             <li>
-              <CheckCircleFilled /> Arts, labs, sport and stage
+              <CheckCircleFilled /> Labs, sport and stage
             </li>
           </ul>
           <button type="button" className="aim-link" onClick={() => scrollToId('#services')}>
@@ -154,10 +154,10 @@ export default function Aim() {
           <article className="trio-bill">
             <small>03 · Streams</small>
             <HighlightHeading as="h3" variant="split">
-              Arts, science, commerce
+              Science and commerce
             </HighlightHeading>
             <p>
-              One campus. Three streams. Students pick the desk that fits —
+              One campus. Two streams. Students pick the desk that fits —
               without leaving the house they already know.
             </p>
             <div className="trio-sum">

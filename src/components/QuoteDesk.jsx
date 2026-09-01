@@ -41,7 +41,7 @@ export default function QuoteDesk() {
       data.notes || '',
     ].join('\n')
     window.open(
-      `https://wa.me/91${school.phones[0]}?text=${encodeURIComponent(body)}`,
+      `https://wa.me/91${school.whatsapp}?text=${encodeURIComponent(body)}`,
       '_blank',
       'noopener,noreferrer',
     )
@@ -72,17 +72,15 @@ export default function QuoteDesk() {
             </p>
           </Reveal>
           <div className="quote-reach">
-            <a href={`tel:${school.tel[0]}`}>
-              <LordIcon src={ic.phone} trigger="hover" colors={light} target="a" size={26} />
-              {school.displayPhones[0]}
-            </a>
-            <a href={`tel:${school.tel[1]}`}>
-              <LordIcon src={ic.phone} trigger="hover" colors={light} target="a" size={26} />
-              {school.displayPhones[1]}
-            </a>
+            {school.displayPhones.map((n, i) => (
+              <a key={n} href={`tel:${school.tel[i]}`}>
+                <LordIcon src={ic.phone} trigger="hover" colors={light} target="a" size={26} />
+                {n}
+              </a>
+            ))}
             <p className="quote-addr">
               <LordIcon src={ic.pin} trigger="hover" colors={light} size={26} />
-              {school.full}, {school.address}
+              {school.address}
             </p>
           </div>
         </aside>

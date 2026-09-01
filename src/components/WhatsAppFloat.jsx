@@ -2,7 +2,7 @@ import { school } from '../school'
 import './WhatsAppFloat.css'
 
 export default function WhatsAppFloat() {
-  const href = `https://wa.me/91${school.phones[0]}?text=${encodeURIComponent(
+  const href = `https://wa.me/91${school.whatsapp}?text=${encodeURIComponent(
     'Hello, I would like to enquire about admission at G. R. Patil College.',
   )}`
 

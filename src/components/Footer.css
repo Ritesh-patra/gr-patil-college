@@ -81,6 +81,7 @@
   margin-bottom: 32px;
 }
 
+.dusk-hops button,
 .dusk-hops a {
   padding: 8px 14px;
   border-radius: 999px;
@@ -93,8 +94,10 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
 }
 
+.dusk-hops button:hover,
 .dusk-hops a:hover {
   background: #c41e26;
   color: #fff;
@@ -189,7 +192,7 @@
 
 .dusk-reach {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.4fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 

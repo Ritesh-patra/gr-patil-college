@@ -64,7 +64,7 @@ export default function Trustee() {
             <div className="reach-phone">
               <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#ffffff" size={24} />
               <strong>Phone</strong>
-              {school.officePhones.map((n) => (
+              {school.phones.map((n) => (
                 <a key={n} href={`tel:+91${n}`}>
                   +91 {n}
                 </a>
