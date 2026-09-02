@@ -56,7 +56,7 @@ export default function Hero() {
           <HeroSun />
           <figure className="hero-photo">
             <img
-              src={asset('campus-building.jpg')}
+              src={asset('hero-campus.jpg')}
               alt="G. R. Patil School and Jr. College building"
             />
             <span className="hero-shine" aria-hidden="true" />

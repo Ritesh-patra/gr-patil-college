@@ -385,6 +385,22 @@ const shots = [
   { src: asset('college-lecture.jpg'), title: 'Lecture hour' },
   { src: asset('faculty-flag.jpg'), title: 'Faculty' },
   { src: asset('campus-building.jpg'), title: 'Campus' },
+  { src: asset('hero-campus.jpg'), title: 'Campus building' },
+  { src: asset('gal-badminton.jpg'), title: 'Badminton' },
+  { src: asset('gal-summer-camp.jpg'), title: 'Summer camp' },
+  { src: asset('gal-yoga.jpg'), title: 'Yoga' },
+  { src: asset('gal-gymkhana.jpg'), title: 'Sports team' },
+  { src: asset('gal-banner-kids.jpg'), title: 'School banner' },
+  { src: asset('gal-outing.jpg'), title: 'Campus outing' },
+  { src: asset('gal-guru-purnima.jpg'), title: 'Guru Purnima' },
+  { src: asset('gal-pledge.jpg'), title: 'Pledge' },
+  { src: asset('gal-blackboard.jpg'), title: 'Classroom board' },
+  { src: asset('gal-cultural.jpg'), title: 'Cultural day' },
+  { src: asset('gal-assembly-talk.jpg'), title: 'Assembly' },
+  { src: asset('gal-exhibition.jpg'), title: 'Science exhibition' },
+  { src: asset('gal-corridor.jpg'), title: 'Corridor' },
+  { src: asset('gal-guru-boys.jpg'), title: 'Guru Purnima class' },
+  { src: asset('gal-ground-assembly.jpg'), title: 'Ground assembly' },
 ]
 
 export function GalleryPage() {

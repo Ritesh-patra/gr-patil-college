@@ -59,10 +59,13 @@
 }
 
 .trustee-portrait figcaption {
+  position: relative;
+  z-index: 3;
   margin: 14px 0 0;
-  padding: 0 4px;
+  padding: 0 4px 0 0;
   color: #fff8e8;
   text-align: left;
+  overflow: visible;
 }
 
 .trustee-portrait figcaption strong {
@@ -70,7 +73,8 @@
   font-family: Fraunces, Georgia, serif;
   font-size: clamp(16px, 1.6vw, 20px);
   font-weight: 650;
-  line-height: 1.2;
+  line-height: 1.25;
+  white-space: normal;
 }
 
 .trustee-portrait figcaption span {
@@ -106,8 +110,11 @@
 
 .trustee-seal {
   position: absolute;
-  left: 8px;
-  bottom: 18px;
+  left: auto;
+  right: 10px;
+  top: 36px;
+  bottom: auto;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 92px;
@@ -157,8 +164,10 @@
   font-family: Fraunces, Georgia, serif;
   font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 650;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.02em;
+  white-space: normal;
+  overflow: visible;
 }
 
 .trustee-head h2 {
