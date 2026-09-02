@@ -8,7 +8,7 @@ import { school } from '../school'
 import './Hero.css'
 
 const stats = [
-  { value: 'Jr. KG', label: 'Pre-primary start' },
+  { value: 'Nursery', label: 'Pre-primary start' },
   { value: '1 – 10', label: 'School years' },
   { value: '11 – 12', label: 'Junior college' },
   { value: 'Degree', label: 'Undergraduate' },
@@ -29,7 +29,7 @@ export default function Hero() {
             <EnvironmentOutlined /> G. R. Patil · {school.place}
           </p>
           <HighlightHeading as="h1">
-            A campus for every stage — KG to junior college.
+            A campus for every stage — Nursery to junior college.
           </HighlightHeading>
           <p className="lede">
             {school.full}. Pre-primary, school and junior college on one
@@ -44,7 +44,7 @@ export default function Hero() {
               size="large"
               icon={<PlayCircleOutlined />}
               className="ghost-btn"
-              onClick={() => scrollToId('#aim')}
+              onClick={() => scrollToId('#about')}
             >
               Our aim
             </Button>
@@ -56,8 +56,8 @@ export default function Hero() {
           <HeroSun />
           <figure className="hero-photo">
             <img
-              src={asset('campus.png')}
-              alt="G. R. Patil campus building"
+              src={asset('campus-building.jpg')}
+              alt="G. R. Patil School and Jr. College building"
             />
             <span className="hero-shine" aria-hidden="true" />
           </figure>

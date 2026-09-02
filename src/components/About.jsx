@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import HighlightHeading from './HighlightHeading'
 import Reveal from './Reveal'
+import Aim from './Aim'
 import { school } from '../school'
 import { asset } from '../icons'
 import './About.css'
@@ -10,10 +11,11 @@ export const aboutLinks = [
     to: '/pre-primary',
     no: '01',
     title: 'Pre-primary',
-    hint: 'Jr. KG & Sr. KG',
+    hint: 'Nursery · Jr. KG · Sr. KG',
     text: 'A first classroom that still feels like home — settling in, play and the start of language.',
     skin: 'ink',
     kids: [
+      { to: '/pre-primary/nursery', label: 'Nursery' },
       { to: '/pre-primary/jr-kg', label: 'Jr. KG' },
       { to: '/pre-primary/sr-kg', label: 'Sr. KG' },
     ],
@@ -26,8 +28,8 @@ export const aboutLinks = [
     text: 'From the first notebook to the board years — academics, sport and values on one ground.',
     skin: 'gold',
     kids: [
-      { to: '/school/primary', label: 'Primary 1–5' },
-      { to: '/school/secondary', label: 'Secondary 6–10' },
+      { to: '/school/primary', label: 'Primary 1–7' },
+      { to: '/school/secondary', label: 'Secondary 8–10' },
     ],
   },
   {
@@ -53,7 +55,8 @@ export function aboutPathOn(pathname) {
 
 export default function About() {
   return (
-    <section className="about-stage" id="about">
+    <section id="about">
+      <div className="about-stage">
       <p className="about-mark" aria-hidden="true">
         About
       </p>
@@ -61,7 +64,7 @@ export default function About() {
         <div className="about-hero">
           <Reveal className="about-copy">
             <p className="kicker">About us</p>
-            <HighlightHeading>A house for science and commerce — from KG to a degree.</HighlightHeading>
+            <HighlightHeading>A house for science and commerce — from Nursery to a degree.</HighlightHeading>
             <p>
               {school.full} sits at {school.street}. Pre-primary, school and junior
               college live on this campus. Gallery and the information desk stay
@@ -79,7 +82,7 @@ export default function About() {
             </ul>
           </Reveal>
           <Reveal delay={80} className="about-frame">
-            <img src={asset('campus.png')} alt="G. R. Patil campus" />
+            <img src={asset('campus-building.jpg')} alt="G. R. Patil campus building" />
             <span>Ambernath (E)</span>
           </Reveal>
         </div>
@@ -105,6 +108,8 @@ export default function About() {
           ))}
         </div>
       </div>
+      </div>
+      <Aim />
     </section>
   )
 }

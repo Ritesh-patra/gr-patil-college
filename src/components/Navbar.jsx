@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Button, Drawer } from 'antd'
+import { Drawer } from 'antd'
 import BrandLockup from './BrandLockup'
 import AnimatedLogo from './AnimatedLogo'
 import LordIcon from './LordIcon'
 import { LORD } from '../icons'
 import { school } from '../school'
-import { aboutLinks, aboutPathOn } from './About'
+import { aboutPathOn } from './About'
 import { scrollToId } from './SmoothScroll'
 import './Navbar.css'
 
@@ -18,11 +18,9 @@ const deskLinks = [
 
 const links = [
   { href: '#home', label: 'Home', hint: 'Start here', icon: LORD.home },
-  { href: '#aim', label: 'Aim', hint: 'Why we teach', icon: LORD.globe },
-  { href: '#leadership', label: 'Trustee', hint: 'A message', icon: LORD.note },
+  { href: '#about', label: 'About', hint: 'Who we are', icon: LORD.person },
   { href: '#services', label: 'Campus', hint: 'Life at school', icon: LORD.shop },
   { href: '#why', label: 'Why us', hint: 'What you gain', icon: LORD.plant },
-  { href: '#contact', label: 'Admission', hint: 'Talk to us', icon: LORD.mail },
 ]
 
 export default function Navbar() {
@@ -63,6 +61,13 @@ export default function Navbar() {
     scrollToId(href)
   }
 
+  const hashOn = (href) => {
+    if (pathname !== '/') {
+      return href === '#about' && aboutPathOn(pathname)
+    }
+    return active === href
+  }
+
   return (
     <header className={`nav-wrap ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="nav-shell">
@@ -78,40 +83,12 @@ export default function Navbar() {
             <a
               key={link.href}
               href={pathname === '/' ? link.href : `/${link.href}`}
-              className={pathname === '/' && active === link.href ? 'is-active' : ''}
+              className={hashOn(link.href) ? 'is-active' : ''}
               onClick={(e) => go(e, link.href)}
             >
               {link.label}
             </a>
           ))}
-          <div className={`nav-drop ${aboutPathOn(pathname) ? 'is-on' : ''}`}>
-            <span className="nav-drop-btn">About</span>
-            <div className="nav-drop-menu" role="menu">
-              {aboutLinks.map((item) => (
-                <div key={item.to} className="nav-drop-group">
-                  <Link
-                    to={item.to}
-                    role="menuitem"
-                    className={pathname === item.to ? 'is-active' : ''}
-                    onClick={close}
-                  >
-                    {item.title}
-                  </Link>
-                  {item.kids.map((kid) => (
-                    <Link
-                      key={kid.to}
-                      to={kid.to}
-                      role="menuitem"
-                      className={`nav-drop-kid ${pathname === kid.to ? 'is-active' : ''}`}
-                      onClick={close}
-                    >
-                      {kid.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
           <Link to="/gallery" className={pathname === '/gallery' ? 'is-active' : ''}>
             Gallery
           </Link>
@@ -136,22 +113,6 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <Button
-            type="primary"
-            className="nav-cta"
-            icon={
-              <LordIcon
-                src={LORD.send}
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#f0c419"
-                target="button"
-                size={22}
-              />
-            }
-            onClick={(e) => go(e, '#contact')}
-          >
-            Admissions
-          </Button>
           <button
             type="button"
             className="nav-burger"
@@ -205,7 +166,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={pathname === '/' ? link.href : `/${link.href}`}
-                  className={`sheet-link ${pathname === '/' && active === link.href ? 'is-active' : ''}`}
+                  className={`sheet-link ${hashOn(link.href) ? 'is-active' : ''}`}
                   style={{ '--i': i }}
                   onClick={(e) => go(e, link.href)}
                 >
@@ -214,11 +175,9 @@ export default function Navbar() {
                       src={link.icon}
                       trigger="loop-on-hover"
                       colors={
-                        link.href === '#aim'
-                          ? 'primary:#f0c419,secondary:#f0c419'
-                          : pathname === '/' && active === link.href
-                            ? 'primary:#ffffff,secondary:#f0c419'
-                            : 'primary:#f0c419,secondary:#6d2d91'
+                        hashOn(link.href)
+                          ? 'primary:#ffffff,secondary:#f0c419'
+                          : 'primary:#f0c419,secondary:#6d2d91'
                       }
                       target=".sheet-link"
                       size={32}
@@ -237,79 +196,10 @@ export default function Navbar() {
                   />
                 </a>
               ))}
-              <p className="sheet-desk-label">About</p>
-              {aboutLinks.flatMap((item, gi) => [
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`sheet-link ${pathname === item.to ? 'is-active' : ''}`}
-                  style={{ '--i': links.length + gi }}
-                  onClick={close}
-                >
-                  <span className="sheet-mark">
-                    <LordIcon
-                      src={LORD.person}
-                      trigger="loop-on-hover"
-                      colors={
-                        pathname === item.to
-                          ? 'primary:#ffffff,secondary:#f0c419'
-                          : 'primary:#f0c419,secondary:#6d2d91'
-                      }
-                      target=".sheet-link"
-                      size={32}
-                    />
-                  </span>
-                  <span>
-                    <strong>{item.title}</strong>
-                    <small>{item.hint}</small>
-                  </span>
-                  <LordIcon
-                    src={LORD.send}
-                    trigger="hover"
-                    colors="primary:#6d2d91,secondary:#f0c419"
-                    target=".sheet-link"
-                    size={18}
-                  />
-                </Link>,
-                ...item.kids.map((kid, ki) => (
-                  <Link
-                    key={kid.to}
-                    to={kid.to}
-                    className={`sheet-link ${pathname === kid.to ? 'is-active' : ''}`}
-                    style={{ '--i': links.length + gi + ki + 1 }}
-                    onClick={close}
-                  >
-                    <span className="sheet-mark">
-                      <LordIcon
-                        src={LORD.note}
-                        trigger="loop-on-hover"
-                        colors={
-                          pathname === kid.to
-                            ? 'primary:#ffffff,secondary:#f0c419'
-                            : 'primary:#f0c419,secondary:#6d2d91'
-                        }
-                        target=".sheet-link"
-                        size={32}
-                      />
-                    </span>
-                    <span>
-                      <strong>{kid.label}</strong>
-                      <small>{item.title}</small>
-                    </span>
-                    <LordIcon
-                      src={LORD.send}
-                      trigger="hover"
-                      colors="primary:#6d2d91,secondary:#f0c419"
-                      target=".sheet-link"
-                      size={18}
-                    />
-                  </Link>
-                )),
-              ])}
               <Link
                 to="/gallery"
                 className={`sheet-link ${pathname === '/gallery' ? 'is-active' : ''}`}
-                style={{ '--i': links.length + aboutLinks.length }}
+                style={{ '--i': links.length }}
                 onClick={close}
               >
                 <span className="sheet-mark">
@@ -341,7 +231,7 @@ export default function Navbar() {
               <Link
                 to="/information-desk"
                 className={`sheet-link ${pathname === '/information-desk' ? 'is-active' : ''}`}
-                style={{ '--i': links.length + aboutLinks.length + 1 }}
+                style={{ '--i': links.length + 1 }}
                 onClick={close}
               >
                 <span className="sheet-mark">
@@ -374,7 +264,7 @@ export default function Navbar() {
                   key={item.to}
                   to={item.to}
                   className={`sheet-link ${pathname === item.to ? 'is-active' : ''}`}
-                  style={{ '--i': links.length + aboutLinks.length + i + 2 }}
+                  style={{ '--i': links.length + i + 2 }}
                   onClick={close}
                 >
                   <span className="sheet-mark">
@@ -406,16 +296,6 @@ export default function Navbar() {
             </nav>
 
             <div className="sheet-foot">
-              <a className="sheet-cta" href={pathname === '/' ? '#contact' : '/#contact'} onClick={(e) => go(e, '#contact')}>
-                Admissions
-                <LordIcon
-                  src={LORD.send}
-                  trigger="hover"
-                  colors="primary:#3a0d14,secondary:#c41e26"
-                  target=".sheet-cta"
-                  size={22}
-                />
-              </a>
               {school.displayPhones.map((n, i) => (
                 <a key={n} href={`tel:${school.tel[i]}`}>
                   <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#6d2d91" target="a" size={22} />

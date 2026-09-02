@@ -42,7 +42,7 @@ function TiltCard({ children, className = '' }) {
 
 export default function Aim() {
   return (
-    <section className="aim" id="aim">
+    <div className="aim">
       <div className="aim-wrap">
         <Reveal className="aim-intro">
           <p className="kicker">Our aim</p>
@@ -50,7 +50,7 @@ export default function Aim() {
             We raise students who can think, compete and belong.
           </HighlightHeading>
           <p className="aim-lede">
-            Our aim is a complete ladder — from junior KG to junior college —
+            Our aim is a complete ladder — from Nursery to junior college —
             where science labs and commerce desks sit beside sport
             and culture, not after them.
           </p>
@@ -75,23 +75,23 @@ export default function Aim() {
           <Reveal delay={80} className="aim-shot farm">
             <TiltCard>
               <figure>
-                <img src={asset('assembly.jpeg')} alt="Morning assembly at G. R. Patil" />
-                <figcaption>Assembly & belonging</figcaption>
+                <img src={asset('preprimary-class.jpg')} alt="Pre-primary students in class" />
+                <figcaption>Pre-primary days</figcaption>
               </figure>
             </TiltCard>
           </Reveal>
           <Reveal delay={160} className="aim-shot roof">
             <TiltCard>
               <figure>
-                <img src={asset('lab1.jpeg')} alt="Science laboratory practical" />
-                <figcaption>Science practicals</figcaption>
+                <img src={asset('college-class.jpg')} alt="Junior college classroom" />
+                <figcaption>College classrooms</figcaption>
               </figure>
             </TiltCard>
           </Reveal>
           <Reveal delay={240} className="aim-shot crew">
             <TiltCard>
               <figure>
-                <img src={asset('sports.jpeg')} alt="Students at sport on campus" />
+                <img src={asset('school-sports.jpg')} alt="Sports and PE on the school ground" />
                 <figcaption>Sport on campus</figcaption>
               </figure>
             </TiltCard>
@@ -102,7 +102,7 @@ export default function Aim() {
       <div className="aim-wrap aim-trio">
         <Reveal>
           <article className="trio-photo">
-            <img src={asset('teachers.jpg')} alt="" />
+            <img src={asset('faculty-flag.jpg')} alt="Faculty on a national day" />
             <div>
               <small>01 · Teaching</small>
               <HighlightHeading as="h3" variant="split">
@@ -116,7 +116,7 @@ export default function Aim() {
                 <li>Mumbra Shikshan Prasarak Mandal&apos;s, Mumbra (Thane)</li>
                 <li>G.R. Patil Vidyamandir / G.R. Patil College of Science &amp; Commerce</li>
                 <li>Affiliated to University of Mumbai</li>
-                <li>Playgroup · Nursery · Jr. KG · Sr. KG · 1st to 10th</li>
+                <li>Nursery · Jr. KG · Sr. KG · Std. 1–7 · Std. 8–10</li>
                 <li>Junior College · Degree College</li>
               </ul>
             </div>
@@ -173,6 +173,6 @@ export default function Aim() {
           </article>
         </Reveal>
       </div>
-    </section>
+    </div>
   )
 }

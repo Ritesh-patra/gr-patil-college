@@ -10,7 +10,7 @@ import './QuoteDesk.css'
 const ic = LORD
 
 const types = [
-  { id: 'Pre-primary', note: 'Jr. KG / Sr. KG', icon: ic.home },
+  { id: 'Pre-primary', note: 'Nursery / Jr. KG / Sr. KG', icon: ic.home },
   { id: 'School', note: 'Std. 1 to 10', icon: ic.person },
   { id: 'Jr. college', note: 'Science / commerce', icon: ic.shop },
   { id: 'Degree college', note: 'Undergraduate', icon: ic.globe },
@@ -55,7 +55,7 @@ export default function QuoteDesk() {
         <aside
           className="quote-side"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(42, 10, 16, 0.45), rgba(18, 5, 8, 0.88)), url(${asset('event.jpeg')})`,
+            backgroundImage: `linear-gradient(180deg, rgba(42, 10, 16, 0.45), rgba(18, 5, 8, 0.88)), url(${asset('aarambh-function.jpg')})`,
           }}
         >
           <Reveal>

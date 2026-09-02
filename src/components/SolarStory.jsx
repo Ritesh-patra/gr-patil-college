@@ -9,31 +9,31 @@ const beats = [
     no: '01',
     title: 'The day begins',
     copy: 'Assembly, uniform, the same ground. A campus that already knows the child.',
-    img: asset('assembly.jpeg'),
+    img: asset('preprimary-flags.jpg'),
   },
   {
     no: '02',
     title: 'Class and lab',
     copy: 'Notebooks in the morning. Pipettes and benches when the science hour comes.',
-    img: asset('lab2.jpeg'),
+    img: asset('college-lecture.jpg'),
   },
   {
     no: '03',
     title: 'The yard',
     copy: 'Sport and fitness after the bell — not as a once-a-year photograph.',
-    img: asset('sports.jpeg'),
+    img: asset('school-pe.jpg'),
   },
   {
     no: '04',
     title: 'Stage and occasion',
     copy: 'Culture days, celebrations, the hall full. A school that can be heard.',
-    img: asset('celebrate.jpg'),
+    img: asset('aarambh-function.jpg'),
   },
   {
     no: '05',
     title: 'The house',
     copy: 'Teachers, team, the people who stay. That is the whole point.',
-    img: asset('team.jpg'),
+    img: asset('faculty-flag.jpg'),
   },
 ]
 

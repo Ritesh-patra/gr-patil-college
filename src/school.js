@@ -13,6 +13,7 @@ export const school = {
   tel: ['+919029681521', '+919819866689', '+919561604141'],
   displayPhones: ['90296 81521', '98198 66689', '95616 04141'],
   whatsapp: '9029681521',
+  trustee: 'Advocate Sunil Gorakh Patil',
 }
 
 export const ink = 'primary:#3a0d14,secondary:#c41e26'

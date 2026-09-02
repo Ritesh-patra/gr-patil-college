@@ -4,8 +4,8 @@ import Reveal from './Reveal'
 import './PageDoors.css'
 
 const doors = [
-  { to: '/pre-primary', no: '01', title: 'Pre-primary', text: 'Jr. KG and Sr. KG — a first classroom that still feels like home.', skin: 'cream' },
-  { to: '/school', no: '02', title: 'School', text: 'Std. 1 to 10 — academics, sport and values on one ground.', skin: 'ink' },
+  { to: '/pre-primary', no: '01', title: 'Pre-primary', text: 'Nursery, Jr. KG and Sr. KG — a first classroom that still feels like home.', skin: 'cream' },
+  { to: '/school', no: '02', title: 'School', text: 'Std. 1 to 7 and 8 to 10 — academics, sport and values on one ground.', skin: 'ink' },
   { to: '/jr-college', no: '03', title: 'Jr college & degree', text: 'XI–XII streams, then undergraduate years under the University of Mumbai.', skin: 'gold' },
   { to: '/gallery', no: '04', title: 'Gallery', text: 'Campus life as it looks here — assemblies, labs, sport and occasions.', skin: 'cream' },
   { to: '/information-desk', no: '05', title: 'Information desk', text: 'Admissions, timings and a WhatsApp enquiry — not a brochure maze.', skin: 'violet' },

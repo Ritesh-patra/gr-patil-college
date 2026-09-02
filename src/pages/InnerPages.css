@@ -209,17 +209,24 @@
   gap: 12px;
 }
 
-.inner-gallery figure {
+.inner-gallery-shot {
   margin: 0;
   overflow: hidden;
   border-radius: 18px;
   background: #3a0d14;
 }
 
+.inner-gallery .ant-image {
+  display: block;
+  width: 100%;
+}
+
+.inner-gallery .ant-image-img,
 .inner-gallery img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  cursor: zoom-in;
 }
 
 .inner-gallery figcaption {
@@ -229,6 +236,14 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.gallery-full img {
+  max-width: min(96vw, 1400px);
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .inner-reach {

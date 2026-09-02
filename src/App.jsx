@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import {
   PrePrimaryPage,
+  NurseryPage,
   JrKgPage,
   SrKgPage,
   SchoolPage,
@@ -28,6 +29,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/pre-primary" element={<PrePrimaryPage />} />
+          <Route path="/pre-primary/nursery" element={<NurseryPage />} />
           <Route path="/pre-primary/jr-kg" element={<JrKgPage />} />
           <Route path="/pre-primary/sr-kg" element={<SrKgPage />} />
           <Route path="/school" element={<SchoolPage />} />

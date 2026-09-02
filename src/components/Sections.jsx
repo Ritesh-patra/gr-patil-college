@@ -60,7 +60,7 @@ export default function Sections() {
                   <CountUp end={14} />
                   <em> +</em>
                 </strong>
-                <p>From junior KG through Std. 12 — the same ground, the same house.</p>
+                <p>From Nursery through Std. 12 — the same ground, the same house.</p>
               </article>
             </Reveal>
             <Reveal delay={100}>

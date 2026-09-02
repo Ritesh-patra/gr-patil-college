@@ -1,6 +1,6 @@
 .aim {
   position: relative;
-  padding: 96px 24px 80px;
+  padding: 32px 24px 80px;
   background:
     radial-gradient(800px 360px at 100% 0%, rgba(255, 222, 78, 0.28), transparent 55%),
     linear-gradient(180deg, #ffffff 0%, #fff8e8 100%);

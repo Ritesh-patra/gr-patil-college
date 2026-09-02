@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
+import { Image } from 'antd'
 import HighlightHeading from '../components/HighlightHeading'
 import Reveal from '../components/Reveal'
 import LordIcon from '../components/LordIcon'
@@ -76,15 +77,14 @@ export function PrePrimaryPage() {
       <Banner
         kicker="01 · Pre-primary"
         title="A first classroom that still feels like home."
-        lead="Jr. KG and Sr. KG. Little children learn by playing, singing and being noticed."
-        image="assembly.jpeg"
-        alt="Pre-primary assembly"
+        lead="Nursery, Jr. KG and Sr. KG. Little children learn by playing, singing and being noticed."
+        image="preprimary-class.jpg"
+        alt="Pre-primary students"
       />
       <div className="inner-body">
         <InnerSubnav root="/pre-primary" />
-        <div className="inner-grid">
-          {[
-            { to: '/pre-primary/jr-kg', title: 'Jr. KG', text: 'The first classroom — settling in, play and a teacher who knows each name.' },
+        <div className="inner-grid three"> text: 'The first classroom — settling in, play and a teacher who knows each name.' },
+            { to: '/pre-primary/jr-kg', title: 'Jr. KG', text: 'The school day becomes familiar: songs, friends, and the first habits of a desk.' },
             { to: '/pre-primary/sr-kg', title: 'Sr. KG', text: 'A year that points toward Std. 1, without rushing the play out of the day.' },
           ].map((item, i) => (
             <Reveal key={item.to} delay={i * 40}>
@@ -129,15 +129,15 @@ export function SchoolPage() {
         kicker="02 · School"
         title="Years that build character as carefully as marks."
         lead="Std. 1 to 10. From the first notebook to the board years — think clearly, work honestly."
-        image="secondary.jpeg"
-        alt="School students"
+        image="school-sports.jpg"
+        alt="School sports on the ground"
       />
       <div className="inner-body">
         <InnerSubnav root="/school" />
         <div className="inner-grid">
           {[
-            { to: '/school/primary', title: 'Primary 1–5', text: 'First notebooks, reading and number sense — the years a child learns to love a desk.' },
-            { to: '/school/secondary', title: 'Secondary 6–10', text: 'The board years: a clearer syllabus, labs, sport, and honest work toward +2.' },
+            { to: '/school/primary', title: 'Primary 1–7', text: 'First notebooks, reading and number sense — the years a child learns to love a desk.' },
+            { to: '/school/secondary', title: 'Secondary 8–10', text: 'The board years: a clearer syllabus, labs, sport, and honest work toward +2.' },
           ].map((item, i) => (
             <Reveal key={item.to} delay={i * 40}>
               <article className="inner-gold">
@@ -175,8 +175,8 @@ export function CollegePage() {
         kicker="03 · Jr college & degree"
         title="After school, a path with a name — then a degree on the same campus."
         lead="XI and XII in science and commerce. Undergraduate years follow here, affiliated to the University of Mumbai."
-        image="lab1.jpeg"
-        alt="Science laboratory"
+        image="college-class.jpg"
+        alt="Junior college classroom"
       />
       <div className="inner-body">
         <InnerSubnav root="/jr-college" />
@@ -228,19 +228,37 @@ export function CollegePage() {
   )
 }
 
+export function NurseryPage() {
+  return (
+    <LeafPage
+      root="/pre-primary"
+      kicker="Pre-primary · Nursery"
+      title="The first classroom — small, kind, and named."
+      lead="Nursery is where a child learns the school day: a peg for a bag, a song, a rest, a teacher who knows their name."
+      image="preprimary-class.jpg"
+      items={[
+        { title: 'Settling in', text: 'The first weeks are slow on purpose. Tears are expected. A teacher stays close until the room feels like theirs.' },
+        { title: 'Play is the work', text: 'Blocks, colour, clay and outdoor time. Nursery is not a tiny Std. 1 — it is play with a watchful adult.' },
+        { title: 'Language at the table', text: 'Songs, stories and conversation. Speaking up starts here, in a room that waits for the child.' },
+        { title: 'Parents beside us', text: 'A note home, an open door. Home and school tell the same story in these early weeks.' },
+      ]}
+    />
+  )
+}
+
 export function JrKgPage() {
   return (
     <LeafPage
       root="/pre-primary"
       kicker="Pre-primary · Jr. KG"
-      title="The first classroom — small, kind, and named."
-      lead="Junior KG is where a child learns the school day: a peg for a bag, a song, a rest, a teacher who knows their name."
-      image="assembly.jpeg"
+      title="A year that makes the school day feel ordinary."
+      lead="After Nursery, Jr. KG keeps play at the centre and quietly adds friends, songs and the first habits of a longer day."
+      image="preprimary-flags.jpg"
       items={[
-        { title: 'Settling in', text: 'The first weeks are slow on purpose. Tears are expected. A teacher stays close until the room feels like theirs.' },
-        { title: 'Play is the work', text: 'Blocks, colour, clay and outdoor time. Jr. KG is not a tiny Std. 1 — it is play with a watchful adult.' },
-        { title: 'Language at the table', text: 'Songs, stories and conversation. Speaking up starts here, in a room that waits for the child.' },
-        { title: 'Parents beside us', text: 'A note home, an open door. Home and school tell the same story in these early weeks.' },
+        { title: 'A familiar room', text: 'The child already knows a teacher and a peg. Jr. KG is not a new start — it is a longer, kinder day.' },
+        { title: 'Play is still the work', text: 'Blocks, colour, clay and outdoor time. We do not drill a four-year-old into a rank list.' },
+        { title: 'Language at the table', text: 'Songs, stories and conversation. Speaking up grows in a room that already knows the child.' },
+        { title: 'Toward Sr. KG', text: 'Teachers talk across the corridor. The child who leaves Jr. KG is known, not a new file.' },
       ]}
     />
   )
@@ -253,7 +271,7 @@ export function SrKgPage() {
       kicker="Pre-primary · Sr. KG"
       title="A year that points toward Std. 1 — without rushing it."
       lead="Senior KG keeps play at the centre, and quietly adds the habits a first notebook will need: listening, sharing, letters and number sense."
-      image="everyday.jpeg"
+      image="preprimary-ground.jpg"
       items={[
         { title: 'Ready, not rushed', text: 'Letters and numbers arrive through stories and games. We do not drill a five-year-old into a rank list.' },
         { title: 'A longer day', text: 'More circle time, more outdoor play, more chance to finish a task. Confidence grows in small, finished things.' },
@@ -269,13 +287,13 @@ export function PrimaryPage() {
     <LeafPage
       root="/school"
       kicker="School · Primary"
-      title="Std. 1 to 5 — the years a child learns to love a notebook."
+      title="Std. 1 to 7 — the years a child learns to love a notebook."
       lead="Primary school on this campus is reading, number sense, the first games, and a teacher who still knows the family at the gate."
-      image="secondary.jpeg"
+      image="preprimary-flags.jpg"
       items={[
         { title: 'First notebooks', text: 'Handwriting, reading and the joy of a sum that finally works. We explain until it makes sense.' },
         { title: 'A full day', text: 'Class, the ground, the hall. Primary is not only desks — sport and song sit on the timetable.' },
-        { title: 'Care that stays', text: 'The same house as Jr. KG. A child does not start again; the campus already knows them.' },
+        { title: 'Care that stays', text: 'The same house as Nursery. A child does not start again; the campus already knows them.' },
         { title: 'Values in the day', text: 'Punctuality, kindness and honesty are practised, not posted. Primary is where they become habit.' },
       ]}
     />
@@ -287,9 +305,9 @@ export function SecondaryPage() {
     <LeafPage
       root="/school"
       kicker="School · Secondary"
-      title="Std. 6 to 10 — the years that ask for honest work."
+      title="Std. 8 to 10 — the years that ask for honest work."
       lead="Secondary school builds toward the board years: a clearer syllabus, labs, sport, and teachers who will not let a gap stay unexplained."
-      image="sports.jpeg"
+      image="school-pe.jpg"
       items={[
         { title: 'The syllabus, plainly', text: 'Regular assessment and a desk that asks for the work. Board years are prepared, not crammed at the end.' },
         { title: 'Labs & the ground', text: 'Science practicals and games after the bell. A student is more than a rank list.' },
@@ -307,7 +325,7 @@ export function SciencePage() {
       kicker="Jr college · Science"
       title="Physics, chemistry, mathematics and biology — labs that are used."
       lead="XI and XII science on this campus. A path toward engineering, medicine and further study, with practicals that are not a display."
-      image="lab1.jpeg"
+      image="college-class.jpg"
       items={[
         { title: 'The four desks', text: 'Physics, chemistry, mathematics and biology. The week has hours in the lab, not only in the notebook.' },
         { title: 'Labs that work', text: 'Pipettes, benches and a teacher on duty. Practicals follow the syllabus and the safety rules.' },
@@ -325,7 +343,7 @@ export function CommercePage() {
       kicker="Jr college · Commerce"
       title="Accounts, business and economics — a foundation with a name."
       lead="XI and XII commerce on this campus. Numbers that will follow into a degree, a CA pathway or work in finance."
-      image="skilldev.jpeg"
+      image="college-lecture.jpg"
       items={[
         { title: 'Accounts first', text: 'Book-keeping taught until the ledger is a habit. Commerce here starts with numbers that balance.' },
         { title: 'Business & economics', text: 'How a firm works, how a market moves. The syllabus is the real world, explained at a desk.' },
@@ -343,7 +361,7 @@ export function DegreePage() {
       kicker="Jr college · Degree"
       title="Undergraduate years in the house you already know."
       lead="After +2, a degree on this campus — affiliated to the University of Mumbai — so a family does not start again at a new gate."
-      image="campus.png"
+      image="campus-building.jpg"
       items={[
         { title: 'Same campus, next stage', text: 'Teachers who already know the student. The walk from junior college to a degree does not need a new city.' },
         { title: 'Science & commerce', text: 'Undergraduate study follows the two streams this house keeps. There is no Arts degree here.' },
@@ -355,21 +373,16 @@ export function DegreePage() {
 }
 
 const shots = [
-  { src: asset('assembly.jpeg'), title: 'Assembly' },
-  { src: asset('secondary.jpeg'), title: 'School day' },
-  { src: asset('lab1.jpeg'), title: 'Science lab' },
-  { src: asset('lab2.jpeg'), title: 'Practicals' },
-  { src: asset('campus.png'), title: 'Campus' },
-  { src: asset('sports.jpeg'), title: 'Sports' },
-  { src: asset('fitness.jpg'), title: 'Fitness' },
-  { src: asset('cultural.jpg'), title: 'Culture' },
-  { src: asset('celebrate.jpg'), title: 'Occasions' },
-  { src: asset('event.jpeg'), title: 'Gathering' },
-  { src: asset('skilldev.jpeg'), title: 'Skill hours' },
-  { src: asset('teachers.jpg'), title: 'Teachers' },
-  { src: asset('team.jpg'), title: 'Team' },
-  { src: asset('everyday.jpeg'), title: 'Everyday' },
-  { src: asset('occasion.jpeg'), title: 'Festival' },
+  { src: asset('aarambh-function.jpg'), title: 'Aarambh annual function' },
+  { src: asset('preprimary-class.jpg'), title: 'Pre-primary classroom' },
+  { src: asset('preprimary-flags.jpg'), title: 'National day' },
+  { src: asset('preprimary-ground.jpg'), title: 'Ground performance' },
+  { src: asset('school-sports.jpg'), title: 'Sports meet' },
+  { src: asset('school-pe.jpg'), title: 'Physical education' },
+  { src: asset('college-class.jpg'), title: 'College classroom' },
+  { src: asset('college-lecture.jpg'), title: 'Lecture hour' },
+  { src: asset('faculty-flag.jpg'), title: 'Faculty' },
+  { src: asset('campus-building.jpg'), title: 'Campus' },
 ]
 
 export function GalleryPage() {
@@ -378,21 +391,23 @@ export function GalleryPage() {
       <Banner
         kicker="04 · Gallery"
         title="Life on campus, in photographs."
-        lead="Assemblies, labs, sport, culture and the people who stay."
-        image="event.jpeg"
-        alt="Campus gathering"
+        lead="Tap a photograph to open it full size."
+        image="aarambh-function.jpg"
+        alt="Aarambh annual function"
       />
       <div className="inner-body">
-        <div className="inner-gallery">
-          {shots.map((item, i) => (
-            <Reveal key={item.src} delay={(i % 6) * 40}>
-              <figure>
-                <img src={item.src} alt={item.title} />
-                <figcaption>{item.title}</figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        <Image.PreviewGroup>
+          <div className="inner-gallery">
+            {shots.map((item, i) => (
+              <Reveal key={item.src} delay={(i % 6) * 40}>
+                <figure className="inner-gallery-shot">
+                  <Image src={item.src} alt={item.title} />
+                  <figcaption>{item.title}</figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </Image.PreviewGroup>
       </div>
     </main>
   )
@@ -405,8 +420,8 @@ export function DeskPage() {
         kicker="05 · Information desk"
         title="Come with a question. Leave with a next step."
         lead="Admissions, timings, transport and fees — write to us or walk in."
-        image="teachers.jpg"
-        alt="Information desk"
+        image="faculty-flag.jpg"
+        alt="Faculty at the information desk"
       />
       <div className="inner-body">
         <div className="inner-reach">
@@ -452,7 +467,7 @@ const deskDocs = {
     kicker: 'Information desk',
     title: 'Notices',
     lead: 'Dates, holidays and anything the office needs families to know this term.',
-    image: 'teachers.jpg',
+    image: 'faculty-flag.jpg',
     items: [
       { title: 'Admissions window', text: 'Ask the desk for the current dates for pre-primary, school, junior college and degree.' },
       { title: 'Term calendar', text: 'Working days, assessments and campus occasions as they are confirmed.' },
@@ -464,7 +479,7 @@ const deskDocs = {
     kicker: 'Information desk',
     title: 'Guidelines',
     lead: 'How the campus runs — uniform, attendance, labs and what we ask of families.',
-    image: 'secondary.jpeg',
+    image: 'campus-building.jpg',
     items: [
       { title: 'Attendance', text: 'A regular day, on time. Leave is informed to the class teacher, not assumed.' },
       { title: 'Uniform & conduct', text: 'The same ground, the same standard — dress and behaviour are part of the timetable.' },
@@ -476,7 +491,7 @@ const deskDocs = {
     kicker: 'Information desk',
     title: 'Circular',
     lead: 'Office circulars for fees, exams and any change the school puts in writing.',
-    image: 'event.jpeg',
+    image: 'college-lecture.jpg',
     items: [
       { title: 'Fee circulars', text: 'When a fee notice is issued, it sits here so families can read it plainly.' },
       { title: 'Exam circulars', text: 'Internal tests, board dates and practicals as the office confirms them.' },

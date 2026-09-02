@@ -58,6 +58,31 @@
   margin: 0 0 0 28px;
 }
 
+.trustee-portrait figcaption {
+  margin: 14px 0 0;
+  padding: 0 4px;
+  color: #fff8e8;
+  text-align: left;
+}
+
+.trustee-portrait figcaption strong {
+  display: block;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.trustee-portrait figcaption span {
+  display: block;
+  margin-top: 4px;
+  color: #f0c419;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .trustee-portrait img {
   width: 100%;
   aspect-ratio: 3 / 4;

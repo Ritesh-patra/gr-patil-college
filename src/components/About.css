@@ -1,7 +1,7 @@
 .about-stage {
   position: relative;
   isolation: isolate;
-  padding: 72px 24px 80px;
+    padding: 72px 24px 36px;
   overflow: hidden;
   background:
     radial-gradient(720px 380px at 100% 0%, rgba(240, 196, 25, 0.28), transparent 55%),

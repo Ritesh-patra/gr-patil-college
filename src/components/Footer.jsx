@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import HighlightHeading from './HighlightHeading'
 import AnimatedLogo from './AnimatedLogo'
 import LordIcon from './LordIcon'
@@ -9,9 +9,11 @@ import './Footer.css'
 
 const hops = [
   { href: '#home', label: 'Home' },
-  { href: '#aim', label: 'Aim' },
+  { href: '#about', label: 'About' },
   { href: '#services', label: 'Campus' },
-  { href: '#contact', label: 'Admission' },
+  { href: '#why', label: 'Why us' },
+  { to: '/gallery', label: 'Gallery' },
+  { to: '/information-desk', label: 'Info desk' },
 ]
 
 export default function Footer() {
@@ -53,11 +55,17 @@ export default function Footer() {
             </div>
           </div>
           <div className="dusk-hops">
-            {hops.map((h) => (
-              <button key={h.href} type="button" onClick={() => go(h.href)}>
-                {h.label}
-              </button>
-            ))}
+            {hops.map((h) =>
+              h.to ? (
+                <Link key={h.to} to={h.to}>
+                  {h.label}
+                </Link>
+              ) : (
+                <button key={h.href} type="button" onClick={() => go(h.href)}>
+                  {h.label}
+                </button>
+              ),
+            )}
           </div>
         </div>
 
@@ -82,7 +90,7 @@ export default function Footer() {
             </div>
             <div>
               <small>Years</small>
-              <strong>KG to XII</strong>
+              <strong>Nursery to XII</strong>
             </div>
           </div>
         </div>

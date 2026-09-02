@@ -9,9 +9,9 @@ const services = [
     id: 'preprimary',
     no: '01',
     title: 'Pre-primary',
-    tag: 'Jr. KG · Sr. KG',
-    copy: 'First years on campus — play, language and the habits that make a school day feel like home.',
-    img: asset('assembly.jpeg'),
+    tag: 'Nursery · Jr. KG · Sr. KG',
+    copy: 'First years on campus — Nursery, then Jr. KG and Sr. KG. Play, language and the habits that make a school day feel like home.',
+    img: asset('preprimary-class.jpg'),
     tone: '#5a1020',
   },
   {
@@ -20,7 +20,7 @@ const services = [
     title: 'Std. 1 to 10',
     tag: 'Vidyamandir',
     copy: 'A full school ladder through the board years, with the same teachers and the same ground.',
-    img: asset('secondary.jpeg'),
+    img: asset('preprimary-ground.jpg'),
     tone: '#3a0d14',
   },
   {
@@ -29,7 +29,7 @@ const services = [
     title: 'Science',
     tag: 'Jr. college',
     copy: 'Labs that are used, not displayed. Practicals, pipettes and the quiet of real work.',
-    img: asset('lab1.jpeg'),
+    img: asset('college-class.jpg'),
     tone: '#2a0818',
   },
   {
@@ -38,7 +38,7 @@ const services = [
     title: 'Commerce',
     tag: 'Jr. college',
     copy: 'Accounts, business and the numbers that follow a student into the degree years.',
-    img: asset('everyday.jpeg'),
+    img: asset('college-lecture.jpg'),
     tone: '#4a1024',
   },
   {
@@ -47,7 +47,7 @@ const services = [
     title: 'Culture',
     tag: 'Stage',
     copy: 'Occasions, dance and the calendar that makes a campus more than a timetable.',
-    img: asset('cultural.jpg'),
+    img: asset('aarambh-function.jpg'),
     tone: '#5c1830',
   },
   {
@@ -56,7 +56,7 @@ const services = [
     title: 'Sports',
     tag: 'Ground',
     copy: 'Matches, drills and the hours after class when the yard is still loud.',
-    img: asset('sports.jpeg'),
+    img: asset('school-sports.jpg'),
     tone: '#1f3a18',
   },
   {
@@ -65,7 +65,7 @@ const services = [
     title: 'Fitness',
     tag: 'Body',
     copy: 'Strength and stamina taught as part of the week, not a poster on the wall.',
-    img: asset('fitness.jpg'),
+    img: asset('school-pe.jpg'),
     tone: '#3a2810',
   },
   {
@@ -74,7 +74,7 @@ const services = [
     title: 'Skill hours',
     tag: 'Hands-on',
     copy: 'Workshops and skill days — making, building, and learning that does not live only in a notebook.',
-    img: asset('skilldev.jpeg'),
+    img: asset('preprimary-flags.jpg'),
     tone: '#3a0d14',
   },
   {
@@ -83,7 +83,7 @@ const services = [
     title: 'Degree college',
     tag: 'Undergraduate',
     copy: 'Undergraduate programmes after junior college — science and commerce under the University of Mumbai.',
-    img: asset('campus.png'),
+    img: asset('campus-building.jpg'),
     tone: '#4a1028',
   },
 ]

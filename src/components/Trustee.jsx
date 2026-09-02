@@ -16,8 +16,12 @@ export default function Trustee() {
         <Reveal className="trustee-portrait">
           <span className="trustee-spine">Trustee</span>
           <figure>
-            <img src={asset('trustee.png')} alt="Trustee of G. R. Patil College" />
+            <img src={asset('trustee.png')} alt={school.trustee} />
             <span className="trustee-cut" aria-hidden="true" />
+            <figcaption>
+              <strong>{school.trustee}</strong>
+              <span>Trustee</span>
+            </figcaption>
           </figure>
           <div className="trustee-seal">
             <b>20+</b>
@@ -55,8 +59,8 @@ export default function Trustee() {
           <div className="trustee-sign">
             <LordIcon src={LORD.person} trigger="loop" colors="primary:#f0c419,secondary:#c41e26" size={34} />
             <div>
-              <strong>Trustee</strong>
-              <small>School · Junior college · Degree college</small>
+              <strong>{school.trustee}</strong>
+              <small>Trustee · School · Junior college · Degree college</small>
             </div>
           </div>
 
