@@ -32,6 +32,7 @@ export default function Trustee() {
         <Reveal delay={90} className="trustee-panel">
           <header className="trustee-head">
             <p className="kicker">Our leadership</p>
+            <p className="trustee-name">{school.trustee}</p>
             <HighlightHeading>A message from our trustee</HighlightHeading>
           </header>
 

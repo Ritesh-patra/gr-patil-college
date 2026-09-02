@@ -83,7 +83,9 @@ export function PrePrimaryPage() {
       />
       <div className="inner-body">
         <InnerSubnav root="/pre-primary" />
-        <div className="inner-grid three"> text: 'The first classroom — settling in, play and a teacher who knows each name.' },
+        <div className="inner-grid three">
+          {[
+            { to: '/pre-primary/nursery', title: 'Nursery', text: 'The first classroom — settling in, play and a teacher who knows each name.' },
             { to: '/pre-primary/jr-kg', title: 'Jr. KG', text: 'The school day becomes familiar: songs, friends, and the first habits of a desk.' },
             { to: '/pre-primary/sr-kg', title: 'Sr. KG', text: 'A year that points toward Std. 1, without rushing the play out of the day.' },
           ].map((item, i) => (

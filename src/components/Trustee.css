@@ -151,6 +151,16 @@
   margin: 0 0 22px;
 }
 
+.trustee-name {
+  margin: 0 0 10px;
+  color: #c41e26;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
 .trustee-head h2 {
   margin: 0;
   max-width: 16ch;
