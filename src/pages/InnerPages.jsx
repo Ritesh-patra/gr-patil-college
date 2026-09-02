@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import HighlightHeading from '../components/HighlightHeading'
 import Reveal from '../components/Reveal'
 import LordIcon from '../components/LordIcon'
 import { LORD, asset } from '../icons'
 import { school } from '../school'
+import { aboutLinks } from '../components/About'
 import QuoteDesk from '../components/QuoteDesk'
 import './InnerPages.css'
 
@@ -17,6 +18,49 @@ function Banner({ kicker, title, lead, image, alt }) {
         <p>{lead}</p>
       </div>
     </header>
+  )
+}
+
+function InnerSubnav({ root }) {
+  const group = aboutLinks.find((item) => item.to === root)
+  if (!group) return null
+  const cls = ({ isActive }) => (isActive ? 'is-active' : undefined)
+  return (
+    <nav className="inner-subnav" aria-label={`${group.title} pages`}>
+      <NavLink to={group.to} end className={cls}>
+        Overview
+      </NavLink>
+      {group.kids.map((kid) => (
+        <NavLink key={kid.to} to={kid.to} className={cls}>
+          {kid.label}
+        </NavLink>
+      ))}
+    </nav>
+  )
+}
+
+function LeafPage({ root, kicker, title, lead, image, items }) {
+  return (
+    <main className="inner">
+      <Banner kicker={kicker} title={title} lead={lead} image={image} alt={title} />
+      <div className="inner-body">
+        <InnerSubnav root={root} />
+        <div className="inner-grid">
+          {items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 60}>
+              <article>
+                <small>0{i + 1}</small>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+        <Link className="inner-go" to={root}>
+          Back to {aboutLinks.find((g) => g.to === root)?.title}
+        </Link>
+      </div>
+    </main>
   )
 }
 
@@ -37,6 +81,22 @@ export function PrePrimaryPage() {
         alt="Pre-primary assembly"
       />
       <div className="inner-body">
+        <InnerSubnav root="/pre-primary" />
+        <div className="inner-grid">
+          {[
+            { to: '/pre-primary/jr-kg', title: 'Jr. KG', text: 'The first classroom — settling in, play and a teacher who knows each name.' },
+            { to: '/pre-primary/sr-kg', title: 'Sr. KG', text: 'A year that points toward Std. 1, without rushing the play out of the day.' },
+          ].map((item, i) => (
+            <Reveal key={item.to} delay={i * 40}>
+              <article className="inner-gold">
+                <h3>
+                  <Link to={item.to}>{item.title}</Link>
+                </h3>
+                <p>{item.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
         <div className="inner-grid">
           {points.map((item, i) => (
             <Reveal key={item.title} delay={i * 60}>
@@ -73,6 +133,22 @@ export function SchoolPage() {
         alt="School students"
       />
       <div className="inner-body">
+        <InnerSubnav root="/school" />
+        <div className="inner-grid">
+          {[
+            { to: '/school/primary', title: 'Primary 1–5', text: 'First notebooks, reading and number sense — the years a child learns to love a desk.' },
+            { to: '/school/secondary', title: 'Secondary 6–10', text: 'The board years: a clearer syllabus, labs, sport, and honest work toward +2.' },
+          ].map((item, i) => (
+            <Reveal key={item.to} delay={i * 40}>
+              <article className="inner-gold">
+                <h3>
+                  <Link to={item.to}>{item.title}</Link>
+                </h3>
+                <p>{item.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
         <div className="inner-grid">
           {points.map((item, i) => (
             <Reveal key={item.title} delay={i * 60}>
@@ -103,18 +179,22 @@ export function CollegePage() {
         alt="Science laboratory"
       />
       <div className="inner-body">
+        <InnerSubnav root="/jr-college" />
         <Reveal>
           <p className="kicker">Junior college</p>
           <HighlightHeading as="h2">Streams after Std. 10</HighlightHeading>
         </Reveal>
-        <div className="inner-grid">
+        <div className="inner-grid three">
           {[
-            { title: 'Science', text: 'Physics, chemistry, mathematics and biology for technical and medical paths.' },
-            { title: 'Commerce', text: 'Accounts, business and economics — a foundation for finance and further study.' },
+            { title: 'Science', to: '/jr-college/science', text: 'Physics, chemistry, mathematics and biology for technical and medical paths.' },
+            { title: 'Commerce', to: '/jr-college/commerce', text: 'Accounts, business and economics — a foundation for finance and further study.' },
+            { title: 'Degree', to: '/jr-college/degree', text: 'Undergraduate years on this campus after +2, affiliated to the University of Mumbai.' },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 60}>
               <article className="inner-gold">
-                <h3>{item.title}</h3>
+                <h3>
+                  <Link to={item.to}>{item.title}</Link>
+                </h3>
                 <p>{item.text}</p>
               </article>
             </Reveal>
@@ -145,6 +225,132 @@ export function CollegePage() {
         </Link>
       </div>
     </main>
+  )
+}
+
+export function JrKgPage() {
+  return (
+    <LeafPage
+      root="/pre-primary"
+      kicker="Pre-primary · Jr. KG"
+      title="The first classroom — small, kind, and named."
+      lead="Junior KG is where a child learns the school day: a peg for a bag, a song, a rest, a teacher who knows their name."
+      image="assembly.jpeg"
+      items={[
+        { title: 'Settling in', text: 'The first weeks are slow on purpose. Tears are expected. A teacher stays close until the room feels like theirs.' },
+        { title: 'Play is the work', text: 'Blocks, colour, clay and outdoor time. Jr. KG is not a tiny Std. 1 — it is play with a watchful adult.' },
+        { title: 'Language at the table', text: 'Songs, stories and conversation. Speaking up starts here, in a room that waits for the child.' },
+        { title: 'Parents beside us', text: 'A note home, an open door. Home and school tell the same story in these early weeks.' },
+      ]}
+    />
+  )
+}
+
+export function SrKgPage() {
+  return (
+    <LeafPage
+      root="/pre-primary"
+      kicker="Pre-primary · Sr. KG"
+      title="A year that points toward Std. 1 — without rushing it."
+      lead="Senior KG keeps play at the centre, and quietly adds the habits a first notebook will need: listening, sharing, letters and number sense."
+      image="everyday.jpeg"
+      items={[
+        { title: 'Ready, not rushed', text: 'Letters and numbers arrive through stories and games. We do not drill a five-year-old into a rank list.' },
+        { title: 'A longer day', text: 'More circle time, more outdoor play, more chance to finish a task. Confidence grows in small, finished things.' },
+        { title: 'Friends and fairness', text: 'Sharing, waiting, speaking in turn — the social work of the year before school proper.' },
+        { title: 'Handover to Std. 1', text: 'Teachers talk across the corridor. The child who leaves Sr. KG is known, not a new file.' },
+      ]}
+    />
+  )
+}
+
+export function PrimaryPage() {
+  return (
+    <LeafPage
+      root="/school"
+      kicker="School · Primary"
+      title="Std. 1 to 5 — the years a child learns to love a notebook."
+      lead="Primary school on this campus is reading, number sense, the first games, and a teacher who still knows the family at the gate."
+      image="secondary.jpeg"
+      items={[
+        { title: 'First notebooks', text: 'Handwriting, reading and the joy of a sum that finally works. We explain until it makes sense.' },
+        { title: 'A full day', text: 'Class, the ground, the hall. Primary is not only desks — sport and song sit on the timetable.' },
+        { title: 'Care that stays', text: 'The same house as Jr. KG. A child does not start again; the campus already knows them.' },
+        { title: 'Values in the day', text: 'Punctuality, kindness and honesty are practised, not posted. Primary is where they become habit.' },
+      ]}
+    />
+  )
+}
+
+export function SecondaryPage() {
+  return (
+    <LeafPage
+      root="/school"
+      kicker="School · Secondary"
+      title="Std. 6 to 10 — the years that ask for honest work."
+      lead="Secondary school builds toward the board years: a clearer syllabus, labs, sport, and teachers who will not let a gap stay unexplained."
+      image="sports.jpeg"
+      items={[
+        { title: 'The syllabus, plainly', text: 'Regular assessment and a desk that asks for the work. Board years are prepared, not crammed at the end.' },
+        { title: 'Labs & the ground', text: 'Science practicals and games after the bell. A student is more than a rank list.' },
+        { title: 'Clubs & the hall', text: 'Music, drama and student clubs — secondary is where a voice finds a stage.' },
+        { title: 'Toward +2', text: 'Science or commerce after Std. 10, on this campus. We help choose a stream; we do not offer Arts.' },
+      ]}
+    />
+  )
+}
+
+export function SciencePage() {
+  return (
+    <LeafPage
+      root="/jr-college"
+      kicker="Jr college · Science"
+      title="Physics, chemistry, mathematics and biology — labs that are used."
+      lead="XI and XII science on this campus. A path toward engineering, medicine and further study, with practicals that are not a display."
+      image="lab1.jpeg"
+      items={[
+        { title: 'The four desks', text: 'Physics, chemistry, mathematics and biology. The week has hours in the lab, not only in the notebook.' },
+        { title: 'Labs that work', text: 'Pipettes, benches and a teacher on duty. Practicals follow the syllabus and the safety rules.' },
+        { title: 'A technical path', text: 'The stream is for students who want engineering, medicine or a science degree — not a holding place.' },
+        { title: 'Next, a degree', text: 'Undergraduate years continue here, affiliated to the University of Mumbai, so the lab does not change houses.' },
+      ]}
+    />
+  )
+}
+
+export function CommercePage() {
+  return (
+    <LeafPage
+      root="/jr-college"
+      kicker="Jr college · Commerce"
+      title="Accounts, business and economics — a foundation with a name."
+      lead="XI and XII commerce on this campus. Numbers that will follow into a degree, a CA pathway or work in finance."
+      image="skilldev.jpeg"
+      items={[
+        { title: 'Accounts first', text: 'Book-keeping taught until the ledger is a habit. Commerce here starts with numbers that balance.' },
+        { title: 'Business & economics', text: 'How a firm works, how a market moves. The syllabus is the real world, explained at a desk.' },
+        { title: 'Toward work and study', text: 'A foundation for finance, further study and a degree on the same ground.' },
+        { title: 'Two doors only', text: 'Science or commerce after Std. 10. This campus does not run an Arts stream.' },
+      ]}
+    />
+  )
+}
+
+export function DegreePage() {
+  return (
+    <LeafPage
+      root="/jr-college"
+      kicker="Jr college · Degree"
+      title="Undergraduate years in the house you already know."
+      lead="After +2, a degree on this campus — affiliated to the University of Mumbai — so a family does not start again at a new gate."
+      image="campus.png"
+      items={[
+        { title: 'Same campus, next stage', text: 'Teachers who already know the student. The walk from junior college to a degree does not need a new city.' },
+        { title: 'Science & commerce', text: 'Undergraduate study follows the two streams this house keeps. There is no Arts degree here.' },
+        { title: 'Labs & classrooms', text: 'Familiar benches, a familiar yard. The years that look toward work still happen under this mark.' },
+        { title: 'Guidance after +2', text: 'Help choosing a course and staying on a path — not only getting a seat. Ask the information desk.' },
+      ]}
+    />
   )
 }
 

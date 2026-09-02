@@ -6,6 +6,7 @@ import AnimatedLogo from './AnimatedLogo'
 import LordIcon from './LordIcon'
 import { LORD } from '../icons'
 import { school } from '../school'
+import { aboutLinks, aboutPathOn } from './About'
 import { scrollToId } from './SmoothScroll'
 import './Navbar.css'
 
@@ -19,7 +20,6 @@ const links = [
   { href: '#home', label: 'Home', hint: 'Start here', icon: LORD.home },
   { href: '#aim', label: 'Aim', hint: 'Why we teach', icon: LORD.globe },
   { href: '#leadership', label: 'Trustee', hint: 'A message', icon: LORD.note },
-  { href: '#about', label: 'About', hint: 'Who we are', icon: LORD.person },
   { href: '#services', label: 'Campus', hint: 'Life at school', icon: LORD.shop },
   { href: '#why', label: 'Why us', hint: 'What you gain', icon: LORD.plant },
   { href: '#contact', label: 'Admission', hint: 'Talk to us', icon: LORD.mail },
@@ -84,8 +84,41 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <div className={`nav-drop ${deskLinks.some((d) => pathname === d.to) ? 'is-on' : ''}`}>
-            <span className="nav-drop-btn">Info desk</span>
+          <div className={`nav-drop ${aboutPathOn(pathname) ? 'is-on' : ''}`}>
+            <span className="nav-drop-btn">About</span>
+            <div className="nav-drop-menu" role="menu">
+              {aboutLinks.map((item) => (
+                <div key={item.to} className="nav-drop-group">
+                  <Link
+                    to={item.to}
+                    role="menuitem"
+                    className={pathname === item.to ? 'is-active' : ''}
+                    onClick={close}
+                  >
+                    {item.title}
+                  </Link>
+                  {item.kids.map((kid) => (
+                    <Link
+                      key={kid.to}
+                      to={kid.to}
+                      role="menuitem"
+                      className={`nav-drop-kid ${pathname === kid.to ? 'is-active' : ''}`}
+                      onClick={close}
+                    >
+                      {kid.label}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          <Link to="/gallery" className={pathname === '/gallery' ? 'is-active' : ''}>
+            Gallery
+          </Link>
+          <div className={`nav-drop ${pathname === '/information-desk' || deskLinks.some((d) => pathname === d.to) ? 'is-on' : ''}`}>
+            <Link to="/information-desk" className="nav-drop-btn">
+              Info desk
+            </Link>
             <div className="nav-drop-menu" role="menu">
               {deskLinks.map((item) => (
                 <Link
@@ -204,13 +237,144 @@ export default function Navbar() {
                   />
                 </a>
               ))}
+              <p className="sheet-desk-label">About</p>
+              {aboutLinks.flatMap((item, gi) => [
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className={`sheet-link ${pathname === item.to ? 'is-active' : ''}`}
+                  style={{ '--i': links.length + gi }}
+                  onClick={close}
+                >
+                  <span className="sheet-mark">
+                    <LordIcon
+                      src={LORD.person}
+                      trigger="loop-on-hover"
+                      colors={
+                        pathname === item.to
+                          ? 'primary:#ffffff,secondary:#f0c419'
+                          : 'primary:#f0c419,secondary:#6d2d91'
+                      }
+                      target=".sheet-link"
+                      size={32}
+                    />
+                  </span>
+                  <span>
+                    <strong>{item.title}</strong>
+                    <small>{item.hint}</small>
+                  </span>
+                  <LordIcon
+                    src={LORD.send}
+                    trigger="hover"
+                    colors="primary:#6d2d91,secondary:#f0c419"
+                    target=".sheet-link"
+                    size={18}
+                  />
+                </Link>,
+                ...item.kids.map((kid, ki) => (
+                  <Link
+                    key={kid.to}
+                    to={kid.to}
+                    className={`sheet-link ${pathname === kid.to ? 'is-active' : ''}`}
+                    style={{ '--i': links.length + gi + ki + 1 }}
+                    onClick={close}
+                  >
+                    <span className="sheet-mark">
+                      <LordIcon
+                        src={LORD.note}
+                        trigger="loop-on-hover"
+                        colors={
+                          pathname === kid.to
+                            ? 'primary:#ffffff,secondary:#f0c419'
+                            : 'primary:#f0c419,secondary:#6d2d91'
+                        }
+                        target=".sheet-link"
+                        size={32}
+                      />
+                    </span>
+                    <span>
+                      <strong>{kid.label}</strong>
+                      <small>{item.title}</small>
+                    </span>
+                    <LordIcon
+                      src={LORD.send}
+                      trigger="hover"
+                      colors="primary:#6d2d91,secondary:#f0c419"
+                      target=".sheet-link"
+                      size={18}
+                    />
+                  </Link>
+                )),
+              ])}
+              <Link
+                to="/gallery"
+                className={`sheet-link ${pathname === '/gallery' ? 'is-active' : ''}`}
+                style={{ '--i': links.length + aboutLinks.length }}
+                onClick={close}
+              >
+                <span className="sheet-mark">
+                  <LordIcon
+                    src={LORD.shop}
+                    trigger="loop-on-hover"
+                    colors={
+                      pathname === '/gallery'
+                        ? 'primary:#ffffff,secondary:#f0c419'
+                        : 'primary:#f0c419,secondary:#6d2d91'
+                    }
+                    target=".sheet-link"
+                    size={32}
+                  />
+                </span>
+                <span>
+                  <strong>Gallery</strong>
+                  <small>Campus in photographs</small>
+                </span>
+                <LordIcon
+                  src={LORD.send}
+                  trigger="hover"
+                  colors="primary:#6d2d91,secondary:#f0c419"
+                  target=".sheet-link"
+                  size={18}
+                />
+              </Link>
               <p className="sheet-desk-label">Info desk</p>
+              <Link
+                to="/information-desk"
+                className={`sheet-link ${pathname === '/information-desk' ? 'is-active' : ''}`}
+                style={{ '--i': links.length + aboutLinks.length + 1 }}
+                onClick={close}
+              >
+                <span className="sheet-mark">
+                  <LordIcon
+                    src={LORD.mail}
+                    trigger="loop-on-hover"
+                    colors={
+                      pathname === '/information-desk'
+                        ? 'primary:#ffffff,secondary:#f0c419'
+                        : 'primary:#f0c419,secondary:#6d2d91'
+                    }
+                    target=".sheet-link"
+                    size={32}
+                  />
+                </span>
+                <span>
+                  <strong>Information desk</strong>
+                  <small>Ask a question</small>
+                </span>
+                <LordIcon
+                  src={LORD.send}
+                  trigger="hover"
+                  colors="primary:#6d2d91,secondary:#f0c419"
+                  target=".sheet-link"
+                  size={18}
+                />
+              </Link>
               {deskLinks.map((item, i) => (
                 <Link
                   key={item.to}
                   to={item.to}
                   className={`sheet-link ${pathname === item.to ? 'is-active' : ''}`}
-                  style={{ '--i': links.length + i }}
+                  style={{ '--i': links.length + aboutLinks.length + i + 2 }}
                   onClick={close}
                 >
                   <span className="sheet-mark">

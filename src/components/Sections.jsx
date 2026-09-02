@@ -1,55 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import {
-  HomeOutlined,
-  ShopOutlined,
-  BuildOutlined,
-  ReadOutlined,
-} from '@ant-design/icons'
 import Reveal from './Reveal'
 import HighlightHeading from './HighlightHeading'
 import SolarStory from './SolarStory'
 import QuoteDesk from './QuoteDesk'
-import { school } from '../school'
 import './Sections.css'
-
-const pillars = [
-  {
-    n: '01',
-    icon: <HomeOutlined />,
-    title: 'School',
-    text: 'Jr. KG through Std. 10 — one Vidyamandir, one set of teachers, one ground.',
-  },
-  {
-    n: '02',
-    icon: <ShopOutlined />,
-    title: 'Junior college',
-    text: 'XI and XII in science and commerce, with labs and desks that stay on this campus.',
-  },
-  {
-    n: '03',
-    icon: <ReadOutlined />,
-    title: 'Degree college',
-    text: 'Undergraduate programmes after junior college — science and commerce, University of Mumbai.',
-  },
-  {
-    n: '04',
-    icon: <BuildOutlined />,
-    title: 'Campus culture',
-    text: 'Sport, fitness, skill hours and the occasions that fill the calendar after class.',
-  },
-]
-
-const ticker = [
-  'Pre-primary',
-  'Std. 1 to 10',
-  'Science',
-  'Commerce',
-  'Junior college',
-  'Degree college',
-  'Laboratories',
-  'Sports',
-  'Admissions',
-]
 
 function CountUp({ end }) {
   const ref = useRef(null)
@@ -88,46 +42,6 @@ function CountUp({ end }) {
 export default function Sections() {
   return (
     <>
-      <section className="block about" id="about">
-        <div className="marquee" aria-hidden="true">
-          <div className="marquee-track">
-            {[...ticker, ...ticker].map((w, i) => (
-              <span key={`${w}-${i}`}>{w}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="block-inner">
-          <Reveal>
-            <p className="kicker">About us</p>
-            <HighlightHeading className="display">
-              G. R. Patil College. Science and commerce.
-            </HighlightHeading>
-            <p className="intro">
-              {school.full}, {school.place}. We take a child from the early years through
-              school and into junior college and degree college — without splitting the
-              campus into three different stories.
-            </p>
-          </Reveal>
-
-          <div className="pillar-grid">
-            {pillars.map((item, i) => (
-              <Reveal key={item.title} delay={i * 120}>
-                <article className="pillar">
-                  <span className="pillar-n">{item.n}</span>
-                  <span className="feature-icon">{item.icon}</span>
-                  <HighlightHeading as="h3" variant="split">
-                    {item.title}
-                  </HighlightHeading>
-                  <p>{item.text}</p>
-                  <i className="pillar-glow" />
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <SolarStory />
 
       <section className="block impact" id="why">

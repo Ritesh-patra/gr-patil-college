@@ -4,8 +4,15 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import {
   PrePrimaryPage,
+  JrKgPage,
+  SrKgPage,
   SchoolPage,
+  PrimaryPage,
+  SecondaryPage,
   CollegePage,
+  SciencePage,
+  CommercePage,
+  DegreePage,
   GalleryPage,
   DeskPage,
   NoticesPage,
@@ -21,8 +28,15 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/pre-primary" element={<PrePrimaryPage />} />
+          <Route path="/pre-primary/jr-kg" element={<JrKgPage />} />
+          <Route path="/pre-primary/sr-kg" element={<SrKgPage />} />
           <Route path="/school" element={<SchoolPage />} />
+          <Route path="/school/primary" element={<PrimaryPage />} />
+          <Route path="/school/secondary" element={<SecondaryPage />} />
           <Route path="/jr-college" element={<CollegePage />} />
+          <Route path="/jr-college/science" element={<SciencePage />} />
+          <Route path="/jr-college/commerce" element={<CommercePage />} />
+          <Route path="/jr-college/degree" element={<DegreePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/information-desk" element={<DeskPage />} />
           <Route path="/notices" element={<NoticesPage />} />

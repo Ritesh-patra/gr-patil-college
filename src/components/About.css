@@ -1,0 +1,266 @@
+.about-stage {
+  position: relative;
+  isolation: isolate;
+  padding: 72px 24px 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(720px 380px at 100% 0%, rgba(240, 196, 25, 0.28), transparent 55%),
+    radial-gradient(640px 300px at 0% 100%, rgba(109, 45, 145, 0.18), transparent 50%),
+    linear-gradient(180deg, #fff8e8 0%, #ffffff 42%, #fffdf7 100%);
+}
+
+.about-mark {
+  position: absolute;
+  left: -2%;
+  top: 8%;
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(120px, 22vw, 280px);
+  line-height: 0.75;
+  font-weight: 700;
+  color: rgba(196, 30, 38, 0.06);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+}
+
+.about-stage-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 36px 48px;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.about-copy h2 {
+  margin: 0 0 16px;
+  max-width: 16ch;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.08;
+}
+
+.about-copy > p {
+  margin: 0 0 22px;
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.about-facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 520px;
+}
+
+.about-facts li {
+  padding: 16px 16px 14px;
+  border-radius: 18px;
+  background: #3a0d14;
+  color: #fff8e8;
+}
+
+.about-facts b {
+  display: block;
+  margin-bottom: 6px;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 22px;
+  color: #f0c419;
+}
+
+.about-facts span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #e8c4c8;
+  text-align: start;
+  hyphens: none;
+}
+
+.about-frame {
+  position: relative;
+  margin: 0;
+}
+
+.about-frame img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px 56px 12px 56px;
+  border: 8px solid #fff;
+  box-shadow:
+    18px 22px 0 #f0c419,
+    0 28px 50px rgba(58, 13, 20, 0.18);
+}
+
+.about-frame span {
+  position: absolute;
+  left: 18px;
+  bottom: 22px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.94);
+  color: #3a0d14;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-doors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.about-door {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 220px;
+  padding: 20px 18px 18px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(196, 30, 38, 0.14);
+  box-shadow: 8px 8px 0 rgba(196, 30, 38, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-door:hover {
+  transform: translateY(-8px);
+}
+
+.about-door-ink {
+  background: #3a0d14;
+  color: #fff8e8;
+  box-shadow: 8px 8px 0 #f0c419;
+}
+
+.about-door-gold {
+  background: #f0c419;
+  color: #3a0d14;
+  box-shadow: 8px 8px 0 #c41e26;
+}
+
+.about-door-violet {
+  background: #6d2d91;
+  color: #fff8e8;
+  box-shadow: 8px 8px 0 #3a0d14;
+}
+
+.about-door small {
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.about-door a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-door strong {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 26px;
+  line-height: 1.12;
+}
+
+.about-door-kids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.about-door-kids a {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 253, 247, 0.2);
+  border: 1px solid rgba(255, 248, 232, 0.35);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.about-door-kids a:hover {
+  background: #f0c419;
+  color: #3a0d14;
+  border-color: #f0c419;
+}
+
+.about-door-gold .about-door-kids a {
+  background: rgba(58, 13, 20, 0.08);
+  border-color: rgba(58, 13, 20, 0.2);
+}
+
+.about-door-gold .about-door-kids a:hover {
+  background: #3a0d14;
+  color: #f0c419;
+  border-color: #3a0d14;
+}
+
+.about-door-cream .about-door-kids a {
+  background: rgba(196, 30, 38, 0.08);
+}
+
+.about-door p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: start;
+  hyphens: none;
+}
+
+.about-door-ink p,
+.about-door-violet p {
+  color: #e8c4c8;
+}
+
+.about-door em {
+  margin-top: auto;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c41e26;
+}
+
+.about-door-ink em,
+.about-door-violet em {
+  color: #f0c419;
+}
+
+.about-door-gold em {
+  color: #3a0d14;
+}
+
+@media (max-width: 980px) {
+  .about-hero,
+  .about-facts,
+  .about-doors {
+    grid-template-columns: 1fr;
+  }
+
+  .about-frame img {
+    aspect-ratio: 16 / 10;
+    border-radius: 24px;
+  }
+}
