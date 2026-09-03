@@ -33,57 +33,51 @@ export default function Trustee() {
           <header className="trustee-head">
             <p className="kicker">Our leadership</p>
             <p className="trustee-name">{school.trustee}</p>
-            <HighlightHeading>A message from our trustee</HighlightHeading>
+            <HighlightHeading>A Message from Our Trustee</HighlightHeading>
           </header>
 
           <p className="trustee-mark">Leadership &amp; vision</p>
           <HighlightHeading as="h3" variant="split">
-            Empowering young minds for a better tomorrow
+            Building a strong foundation for every student
           </HighlightHeading>
           <p>
-            G. R. Patil Vidyamandir, Jr. College of Science &amp; Commerce and
-            Degree College stand as one house: early years, board classes,
-            XI–XII and undergraduate study on the same campus.
-          </p>
-          <p>
-            We want every student to leave with discipline, opportunity and the
-            confidence to take the next step — whether that is junior college
-            or a degree.
+            At G. R. Patil Vidyamandir &amp; Junior College, we believe education
+            is a continuous journey that begins with strong foundations and
+            grows through knowledge, discipline and experience. Our aim is to
+            provide students with a supportive learning environment where they
+            can develop academically, build confidence and prepare thoughtfully
+            for the opportunities ahead.
           </p>
 
           <blockquote>
             <span aria-hidden="true">“</span>
-            Every child has the potential to achieve greatness when given the
-            right guidance, opportunities and encouragement.
+            Every student deserves the opportunity to learn, grow and move
+            forward with confidence.
           </blockquote>
 
           <div className="trustee-sign">
             <LordIcon src={LORD.person} trigger="loop" colors="primary:#f0c419,secondary:#c41e26" size={34} />
             <div>
               <strong>{school.trustee}</strong>
-              <small>Trustee · School · Junior college · Degree college</small>
+              <small>Trustee · School &amp; Junior College</small>
             </div>
           </div>
 
           <div className="trustee-reach">
             <div className="reach-phone">
-              <LordIcon src={LORD.phone} trigger="hover" colors="primary:#f0c419,secondary:#ffffff" size={24} />
-              <strong>Phone</strong>
-              {school.phones.map((n) => (
-                <a key={n} href={`tel:+91${n}`}>
-                  +91 {n}
-                </a>
-              ))}
+              <LordIcon src={LORD.plant} trigger="hover" colors="primary:#f0c419,secondary:#ffffff" size={24} />
+              <strong>Education</strong>
+              <span>School education with a focus on strong academic foundations and student development.</span>
             </div>
-            <a className="reach-mail" href={`mailto:${school.email}`}>
-              <LordIcon src={LORD.mail} trigger="hover" colors="primary:#c41e26,secondary:#f0c419" size={24} />
-              <strong>Email</strong>
-              <span>{school.email}</span>
-            </a>
+            <div className="reach-mail">
+              <LordIcon src={LORD.note} trigger="hover" colors="primary:#c41e26,secondary:#f0c419" size={24} />
+              <strong>Junior college</strong>
+              <span>Science and Commerce pathways for students pursuing higher secondary education.</span>
+            </div>
             <div className="reach-degree">
-              <LordIcon src={LORD.shop} trigger="hover" colors="primary:#3a0d14,secondary:#c41e26" size={24} />
-              <strong>Degree college</strong>
-              <span>Undergraduate · University of Mumbai</span>
+              <LordIcon src={LORD.globe} trigger="hover" colors="primary:#3a0d14,secondary:#c41e26" size={24} />
+              <strong>Our approach</strong>
+              <span>A supportive environment that encourages learning, discipline, confidence and responsibility.</span>
             </div>
           </div>
         </Reveal>

@@ -63,7 +63,11 @@ export default function SolarStory() {
       <div className="film-head">
         <Reveal>
           <p className="kicker">How a day runs</p>
-          <HighlightHeading>Five beats. Automatic. No cartoon.</HighlightHeading>
+          <HighlightHeading>A Day in the Life of Our Students</HighlightHeading>
+          <p>
+            Learning, exploring, participating and growing — every day brings
+            new experiences at G. R. Patil School &amp; Junior College.
+          </p>
         </Reveal>
       </div>
 

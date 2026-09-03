@@ -131,10 +131,14 @@ export default function ServiceShowcase() {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="showcase-head">
-        <p className="kicker">Campus</p>
+        <p className="kicker">Campus life</p>
         <HighlightHeading>
-          School life as it looks here — not stock photos of somewhere else.
+          Life Beyond the Classroom
         </HighlightHeading>
+        <p>
+          Discover the classrooms, activities, events and experiences that
+          shape everyday student life at G. R. Patil School &amp; Junior College.
+        </p>
       </div>
 
       <div

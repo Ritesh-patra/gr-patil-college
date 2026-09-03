@@ -14,12 +14,20 @@
 }
 
 .film-head h2 {
-  margin: 0;
-  max-width: 14ch;
+  margin: 0 0 12px;
+  max-width: 16ch;
   font-family: Fraunces, Georgia, serif;
   font-size: clamp(32px, 4.5vw, 52px);
   color: #fff;
   line-height: 1.08;
+}
+
+.film-head p:not(.kicker) {
+  margin: 0;
+  max-width: 52ch;
+  color: #c5d4a8;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .film-stage {

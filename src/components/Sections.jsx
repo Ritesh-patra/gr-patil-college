@@ -1,43 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
 import Reveal from './Reveal'
 import HighlightHeading from './HighlightHeading'
 import SolarStory from './SolarStory'
 import QuoteDesk from './QuoteDesk'
 import './Sections.css'
-
-function CountUp({ end }) {
-  const ref = useRef(null)
-  const [value, setValue] = useState(0)
-
-  useEffect(() => {
-    const node = ref.current
-    if (!node) return
-    let raf
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
-        io.disconnect()
-        const start = performance.now()
-        const dur = 1400
-        const tick = (now) => {
-          const t = Math.min(1, (now - start) / dur)
-          const eased = 1 - (1 - t) ** 3
-          setValue(Math.round(end * eased))
-          if (t < 1) raf = requestAnimationFrame(tick)
-        }
-        raf = requestAnimationFrame(tick)
-      },
-      { threshold: 0.4 },
-    )
-    io.observe(node)
-    return () => {
-      io.disconnect()
-      cancelAnimationFrame(raf)
-    }
-  }, [end])
-
-  return <span ref={ref}>{value.toLocaleString('en-IN')}</span>
-}
 
 export default function Sections() {
   return (
@@ -47,40 +12,39 @@ export default function Sections() {
       <section className="block impact" id="why">
         <div className="block-inner">
           <Reveal>
-            <p className="kicker">Why families stay</p>
+            <p className="kicker">Why families choose us</p>
             <HighlightHeading className="display">
-              A ladder you can walk without changing school.
+              One Educational Journey, From School to Higher Education
             </HighlightHeading>
           </Reveal>
           <div className="impact-grid">
             <Reveal>
               <article className="impact-card">
-                <small>Years on campus</small>
+                <small>Academic journey</small>
                 <strong>
-                  <CountUp end={14} />
-                  <em> +</em>
+                  School to Std. 12
                 </strong>
-                <p>From Nursery through Std. 12 — the same ground, the same house.</p>
+                <p>A continuous pathway from early schooling through secondary and higher secondary education.</p>
               </article>
             </Reveal>
             <Reveal delay={100}>
               <article className="impact-card gold">
-                <small>Streams</small>
+                <small>Junior college</small>
                 <strong>
-                  Two
-                  <em> desks</em>
+                  Science
+                  <em> &amp; Commerce</em>
                 </strong>
-                <p>Science and commerce under one red-and-gold mark.</p>
+                <p>Students can choose Science or Commerce at the junior college level based on their academic interests and goals.</p>
               </article>
             </Reveal>
             <Reveal delay={200}>
               <article className="impact-card">
-                <small>Campus days</small>
+                <small>Learning beyond classrooms</small>
                 <strong>
-                  Lab
-                  <em> + field</em>
+                  Knowledge
+                  <em> + Experience</em>
                 </strong>
-                <p>Practicals, sport, fitness and the stage — not only the timetable.</p>
+                <p>Classroom learning is supported by practical activities, events, sports and opportunities for overall student development.</p>
               </article>
             </Reveal>
           </div>

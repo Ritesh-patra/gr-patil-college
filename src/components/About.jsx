@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import HighlightHeading from './HighlightHeading'
 import Reveal from './Reveal'
 import Aim from './Aim'
-import { school } from '../school'
 import { asset } from '../icons'
 import './About.css'
 
@@ -66,18 +65,21 @@ export default function About() {
             <p className="kicker">About us</p>
             <HighlightHeading>A house for science and commerce — from Nursery to a degree.</HighlightHeading>
             <p>
-              {school.full} sits at {school.street}. Pre-primary, school and junior
-              college live on this campus. Gallery and the information desk stay
-              separate — these three doors are the years a child walks.
+              GR Patil School & Junior College offers a continuous educational
+              journey from early schooling through junior college and
+              undergraduate studies. With a focus on strong academic
+              foundations, practical learning and overall development, students
+              are supported in building confidence and preparing for their
+              future educational goals.
             </p>
             <ul className="about-facts">
               <li>
                 <b>Science</b>
-                <span>Labs that are used, not displayed.</span>
+                <span>Strong academic foundations with practical laboratory learning.</span>
               </li>
               <li>
                 <b>Commerce</b>
-                <span>Accounts and business that follow into a degree.</span>
+                <span>Developing knowledge of accounts, business and commerce for higher studies.</span>
               </li>
             </ul>
           </Reveal>
